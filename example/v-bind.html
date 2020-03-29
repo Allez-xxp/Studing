@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>v-bind 案例</title>
+</head>
+<body>
+    <h1>v-bind 案例</h1>
+    <hr>
+    <div id="app">
+        <img v-bind:src="imgSrc"  width="200px"><br/>
+        <a :href="jspang" target="_blank">Jspang</a>
+        <hr>
+        <div :class="className">1、绑定classA</div>
+        <div :class="{classA:isOk}">2、绑定class中的判断</div>
+        <div :class="[classA,classB]">3、绑定class中的数组</div>
+        <div :class="isOk?classA:classB">4、绑定class中的三元表达式判断</div>
+        <hr>
+        <input type="checkbox" id="isTrue" v-model="isOk">
+        <label for='isTrue'>isOk={{isOk}}</label>
+        <hr>
+        <div :style="{color:yellow,fontSize:font}">5、绑定style</div>
+        <div :style="styleObject">6、用对象绑定style样式</div>
+
+    </div>
+    <style>
+        .classA{
+            color:red;
+        }
+        .classB{
+            font-size:150%
+        }
+    </style>
+
+    <script type="text/javascript">
+        var app=new Vue({
+            el:'#app',
+            data:{
+                imgSrc:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585497910506&di=ddb12a2b62300a372adb7440ea7f80b6&imgtype=0&src=http%3A%2F%2Fa3.att.hudong.com%2F14%2F75%2F01300000164186121366756803686.jpg',
+                jspang:'http://jspang.com',
+                className:'classA',
+                isOk:false,
+                classA:'classA',
+                classB:'classB',
+                yellow:'yellow',
+                font:'30px',
+                styleObject:{
+                    fontSize:'24px',
+                    color:'green'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

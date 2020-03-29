@@ -7,3 +7,8 @@
 - v-html: 将js中的html标签运行输出（尽量不要使用）
 - v-on：绑定事件，并进行监听
 - v-model: 绑定数据源
+  v-model.lazy: 延迟加载
+  v-model.number: 只加载数字（前面不能有字符串）
+  v-model.trim: 前后去空格，后面加空格无用
+- v-bind: 绑定HTML标签的属性（src,style,class）
+  :style="{color:red,fontSize:font}" 简写v-bind绑定值
