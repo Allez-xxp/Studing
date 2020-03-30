@@ -1,3 +1,4 @@
+# 第一阶段 vue内部指令学习
 - v-if: 判断是否加载，可以减轻服务器的压力，在需要时加载
   v-else与v-if连用，判断事件是否执行
 - v-show: 调整CSS中display属性，可以使客户端操作更加流畅
@@ -15,3 +16,22 @@
 - v-pre: 原样输出
 - v-cloak: 渲染完成后才显示
 - v-once: 只进行第一次渲染，后面再修改都不执行
+
+# 第二阶段 vue全局API
+- 自定义指令:
+ - el:指令所绑定的元素，可以用来直接操作DOM 
+ - binding:一个对象，包含指令的很多信息 
+ - 五个生命周期（钩子函数） 
+    1. bind:只调用一次，指令第一次绑定到元素时调用，用这个钩子函数可以定义一个绑定时执行一次的初始化动作。
+    2. inserted:被绑定元素插入父节点时调用（父节点存在即可调用，不必存在于document中）。
+    3. update:被绑定于元素所在的模板更新时调用，而无论绑定值是否变化。通过比较更新前后的绑定值，可以忽略不必要的模板更新。
+    4. componentUpdated:被绑定元素所在模板完成一次更新周期时调用。
+    5. unbind:只调用一次，指令与元素解绑时调用。
+  
+ Vue.directive("",
+ bind:function(el,binding){},
+ inserted:function(){},
+ update:function(){},
+ componentUpdated:function(){},
+ unbind:function(){}
+});
