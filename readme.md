@@ -35,10 +35,22 @@
     componentUpdated:function(){},
     unbind:function(){}
     });
+
 - Vue.extend: 扩展构造器
   1. 通过HTML标签上的id或者class来生成扩展实例构造器
   2. 直接写标签
   - 挂载到页面 
   new authorURL().$mount("#author");
   new authorURL().$mount("author");
+
+- Vue.set: 在构造器外部操作构造器内部的数据、属性或者方法。
+  - 修改外部数据方法（三种）
+    1. Vue.set方法  Vue.set(outData,'count',2);
+    2. Vue对象方法  app.count++;
+    3. 直接操作外部数据  outData.count++;
+  - 为什么使用Vue.set?
+  由于Javascript的限制，Vue不能自动检测以下变动的数组。
+    1. 当你利用索引直接设置一个项时，vue不会为我们自动更新。
+    2. 当你修改数组的长度时，vue不会为我们自动更新。
+  所以采用Vue.set(app.arr,1,'ddd')来设置改变，Vue会进行数组内容的自动更新
        
