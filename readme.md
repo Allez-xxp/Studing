@@ -12,3 +12,6 @@
   v-model.trim: 前后去空格，后面加空格无用
 - v-bind: 绑定HTML标签的属性（src,style,class）
   :style="{color:red,fontSize:font}" 简写v-bind绑定值
+- v-pre: 原样输出
+- v-cloak: 渲染完成后才显示
+- v-once: 只进行第一次渲染，后面再修改都不执行
