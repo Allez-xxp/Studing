@@ -28,10 +28,17 @@
     4. componentUpdated:被绑定元素所在模板完成一次更新周期时调用。
     5. unbind:只调用一次，指令与元素解绑时调用。
   
- Vue.directive("",
- bind:function(el,binding){},
- inserted:function(){},
- update:function(){},
- componentUpdated:function(){},
- unbind:function(){}
-});
+  - Vue.directive("",
+    bind:function(el,binding){},
+    inserted:function(){},
+    update:function(){},
+    componentUpdated:function(){},
+    unbind:function(){}
+    });
+- Vue.extend: 扩展构造器
+  1. 通过HTML标签上的id或者class来生成扩展实例构造器
+  2. 直接写标签
+  - 挂载到页面 
+  new authorURL().$mount("#author");
+  new authorURL().$mount("author");
+       
