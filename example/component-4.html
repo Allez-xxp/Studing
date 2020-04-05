@@ -1,0 +1,55 @@
+<!-- component标签 
+    动态变化--根据不同的data值，声明组件
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>component标签</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>component标签</h1>
+    <hr>
+    <div id="app">
+        <!-- vue自带的标签，可任意使用下列注册组件 -->
+        <component v-bind:is="who"></component>
+        <button @click="changeComponent">改变</button>
+    </div>
+    <script type="text/javascript">
+        var componentA = {
+            template: `<div style="color:blue"> I'm componentA</div>`
+        }
+        var componentB = {
+            template: `<div style="color:green"> I'm componentB</div>`
+        }
+        var componentC = {
+            template: `<div style="color:yellow"> I'm componentC</div>`
+        }
+        var app = new Vue({
+            el: '#app',
+            data: {
+                who: 'componentA'
+            },
+            // 挂载组件
+            components: {
+                "componentA" : componentA,
+                "componentB" : componentB,
+                "componentC" : componentC,
+            },
+            methods: {
+                changeComponent: function(){
+                    if(this.who == "componentA") {
+                       this.who = "componentB"; 
+                    } else if (this.who == "componentB"){
+                        this.who = "componentC";
+                    }else{
+                        this.who = "componentA";
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
