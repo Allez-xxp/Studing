@@ -88,4 +88,27 @@
 作用:主要是对原数据进行改造输出。（为不污染原始数据）改造输出：包括格式的编辑，大小写转换，顺序重排，添加符号....
  1. 格式编辑 100--￥100元
  2. 反转数组 js原生方法reverse()
+
+- methods 方法选项
+1. 参数的传递
+ - methods的方法中进行声明参数  add:function(num){}
+ - 调用方法时直接传递参数  <button @click=”add(2)”></button>
+2. $event参数
+ 主要包括鼠标点击的一些事件和属性，适用于交互感较强的项目
+ 传递方法：<button @click=”add(2,$event)”>add</button>
+3. .native修饰器
+ - 给组件绑定构造器里的原生事件；将按钮封装成组件，使组件可以调用构造器里的方法
+ - 将add按钮封装成组件步骤：
+  1. 声明btn对象：
+  var btn={
+    template:`<button>组件Add</button>`     
+  }
+  2. 在构造器里声明该组件：
+  components:{
+    "btn":btn
+  }
+  3. 用.native修饰器来调用构造器里的add方法：
+  <p><btn @click.native="add(3)"></btn></p>
+4. 作用域外部调用构造器里的方法
+<button onclick="app.add(4)" >外部调用构造器里的方法</button>
        
