@@ -65,4 +65,22 @@
  - 在父组件里注册子组件，父组件调用子组件，获得子组件数据
 4. component标签
   动态变化--根据不同的data值，声明组件
+
+# 第三阶段 构造器里的选项
+- propsData 主要用于全局扩展的数据传递
+在扩展标签中挂载传递数据：（propsData 3步）
+ 1. 在全局扩展里加入props进行接收。propsData:{a:1} 
+ 2. 传递时用propsData进行传递。props:[‘a’] 
+ 3. 用插值的形式写入模板。{{ a }} 
+ 
+ var header_a = Vue.extend({  //构造器扩展
+            template: `<p>{{message}}-{{b}}</p>`,
+            data: function() {
+                return {
+                    message: 'Hello, i am header' 
+                }
+            },
+            props: ['b']
+        });
+        new header_a({propsData: {b:12}}).$mount('header');
        

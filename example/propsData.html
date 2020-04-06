@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+    <title>cpropsData Option</title>
+</head>
+<body>
+    <h1>propsData Option</h1>
+    <hr>
+    <header></header>
+
+    <script type="text/javascript">
+        var header_a = Vue.extend({  //构造器扩展
+            template: `<p>{{message}}-{{b}}</p>`,
+            data: function() {
+                return {
+                    message: 'Hello, i am header' 
+                }
+            },
+            props: ['b']
+        });
+        new header_a({propsData: {b:12}}).$mount('header');
+    </script>
+</body>
+</html>
