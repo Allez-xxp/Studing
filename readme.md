@@ -128,3 +128,8 @@
         console.log('我是全局被混入的');
     }
   })
+
+- extends 扩展选项
+ 1. 构造器里的方法名和扩展的方法名不能重复
+ 2. extends选项只能对应对象
+ 3. delimiters的作用是改变我们插值的符号 delimiters:['${','}']
