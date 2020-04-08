@@ -111,4 +111,20 @@
   <p><btn @click.native="add(3)"></btn></p>
 4. 作用域外部调用构造器里的方法
 <button onclick="app.add(4)" >外部调用构造器里的方法</button>
-       
+
+- watch选项 监控数据
+ 1. 构造器
+ 2. 实例属性 app.$watch('xxx',function(){})
+
+- mixins混入选项
+ - Mixins一般有两种用途：
+ 1. 在你已经写好了构造器后，需要增加方法或者临时的活动时使用的方法，这时用混入会减少源代码的污染。
+ 2. 很多地方都会用到的公用方法，用混入的方法可以减少代码量，实现代码重用
+ - mixins的执行顺序
+  全局API最先执行；混入选项再执行；构造器里的后执行（原生）
+ - 全局API 混入方法
+  Vue.mixin({
+    updated:function(){
+        console.log('我是全局被混入的');
+    }
+  })

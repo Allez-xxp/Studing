@@ -34,6 +34,7 @@
                     this.temperature-=5;
                 }
             },
+            // 构造器里watch监控
             // watch:{
             //     temperature:function(newVal,oldVal){
             //         if(newVal>=26){
@@ -48,6 +49,7 @@
             // }
 
         })
+        // 实例属性创建watch
         app.$watch('temperature',function(newVal,oldVal){
             if(newVal>=26){
                 this.suggestion=suggestion[0];

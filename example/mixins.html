@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mixins Option</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>mixins Option</h1>
+    <hr>
+    <div id="app">
+         <p> {{ num }} </p>
+         <button @click="add">增加</button>
+    </div>
+    <script type="text/javascript">
+        var addLog = {
+            updated: function() {  //钩子函数（生命周期）
+                console.log("数据发生变化，变化为"+this.num+".");
+            }
+        };
+        // 全局API
+        Vue.mixin({
+            updated: function() {
+                console.log('我是全局API')
+            }
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 1
+            },
+            methods: {
+                add: function() {
+                    this.num++;
+                }
+            },
+            updated: function() {
+                console.log('我是原生的update');
+            },
+            mixins: [addLog]  //混入选项
+        })
+    </script>
+</body>
+</html>
