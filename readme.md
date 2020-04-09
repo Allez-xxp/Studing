@@ -133,3 +133,17 @@
  1. 构造器里的方法名和扩展的方法名不能重复
  2. extends选项只能对应对象
  3. delimiters的作用是改变我们插值的符号 delimiters:['${','}']
+
+# 第四阶段 实例和内置组件
+- 实例入门- 实例属性讲解
+ 1. 下载并引入jQuery版本（官网查询，放在js目录），jquery只能有mounted，updated等生命周期引入  
+ <script type="text/javascript" src="../assets/js/jquery-3.1.1.min.js"></script>
+ 2. 内部定义方法，外部实例调用
+ methods:{
+    add:function(){
+        console.log("调用了Add方法");
+    }
+  }
+  app.add();
+-
+
