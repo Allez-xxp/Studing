@@ -135,32 +135,54 @@
     3. delimiters的作用是改变我们插值的符号 delimiters:['${','}']
 
 # 第四阶段 实例和内置组件
-- 实例入门- 实例属性讲解
-  1. 下载并引入jQuery版本（官网查询，放在js目录），jquery只能有mounted，updated等生命周期引入  
-  <script type="text/javascript" src="../assets/js/jquery-3.1.1.min.js"></script>
-  2. 内部定义方法，外部实例调用
-  methods:{
-      add:function(){
-          console.log("调用了Add方法");
+  - 实例入门- 实例属性讲解
+    1. 下载并引入jQuery版本（官网查询，放在js目录），jquery只能有mounted，updated等生命周期引入  
+    <script type="text/javascript" src="../assets/js/jquery-3.1.1.min.js"></script>
+    2. 内部定义方法，外部实例调用
+    methods:{
+        add:function(){
+            console.log("调用了Add方法");
+        }
       }
+      app.add();
+  - 实例方法
+    1. $mount() 挂载方法
+    var vm = new jspang().$mount("#app");
+    2. $destroy() 卸载方法
+    function destroy(){
+      vm.$destroy();
     }
-    app.add();
-- 实例方法
-  1. $mount() 挂载方法
-  var vm = new jspang().$mount("#app");
-  2. $destroy() 卸载方法
-  function destroy(){
-     vm.$destroy();
-  }
-  3. $forceUpdate() 更新方法
-  function reload(){
-     vm.$forceUpdate();
-  }
-  4. $nextTick() 数据修改方法
-  function tick() {
-      vm.message="update message info";
-      vm.$nextTick(function(){
-        console.log('message更新完成之后我被调用了');
-      })
-  }
+    3. $forceUpdate() 更新方法
+    function reload(){
+      vm.$forceUpdate();
+    }
+    4. $nextTick() 数据修改方法
+    function tick() {
+        vm.message="update message info";
+        vm.$nextTick(function(){
+          console.log('message更新完成之后我被调用了');
+        })
+    }
+  - 实例事件
+    定义：就是在构造器外部写一个调用构造器内部的方法
+    好处：可以通过这种写法在构造器外部调用构造器内部的数据
+    1. $on 在构造器外部添加事件（可一直执行）
+    2. $once 只执行一次事件
+    3. $off 关闭事件（指定）
+  - 内置组件 slot
+    定义：slot是标签的内容扩展，在自定义组件时传递给组件内容，组件接收内容并输出。
+    1. 在HTML的组件中用slot属性传递值。
+    <jspang>
+    <span slot="bolgUrl">{{jspangData.bolgUrl}}</span>    
+    <span slot="netName">{{jspangData.netName}}</span>    
+    <span slot="skill">{{jspangData.skill}}</span>    
+    </jspang>
+    2. 在组件模板中用标签接收值。
+    <template id="tmp">
+    <div>
+        <p>博客地址：<slot name="bolgUrl"></slot></p>
+        <p>网名：<slot name="netName"></slot></p>
+        <p>技术类型：<slot name="skill"></slot></p>
+    </div>
+    </template>
 
