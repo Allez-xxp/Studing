@@ -186,3 +186,18 @@
     </div>
     </template>
 
+# 第四阶段 vue-cli
+  - 安装步骤
+   1. 查看是否安装npm，若没有就到官网下载。 npm -v 查看npm版本
+   2. 安装vue-cli, 命令：npm install vue-cli -g（g为全局命令）； vue -V来进行查看vue-cli的版本号
+  - 项目步骤
+   1. 初始化项目 $ vue init <template-name> <project-name>
+   解释：
+    init：表示我要用vue-cli来初始化项目
+    <template-name>：表示模板名称，vue-cli官方为我们提供了5种模板，
+      1. webpack-一个全面的webpack+vue-loader的模板，功能包括热加载，linting,检测和CSS扩展。
+      2. webpack-simple-一个简单webpack+vue-loader的模板，不包含其他功能，让你快速的搭建vue的开发环境。
+      3. browserify-一个全面的Browserify+vueify 的模板，功能包括热加载，linting,单元检测。
+      4. browserify-simple-一个简单Browserify+vueify的模板，不包含其他功能，让你快速的搭建vue的开发环境。
+      5. -simple-一个最简单的单页应用模板。
+    <project-name>：标识项目名称，这个你可以根据自己的项目来起名字。
