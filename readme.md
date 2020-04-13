@@ -202,6 +202,7 @@
         5. -simple-一个最简单的单页应用模板。
       <project-name>：标识项目名称，这个你可以根据自己的项目来起名字。
     注意：在实际开发中，一般我们都会使用webpack这个模板，在命令行输入以下命令：vue init webpack vueclitest
+
   - webpack目录结构
     .
     |-- build                            // 项目构建(webpack)相关代码
@@ -240,4 +241,17 @@
       3. devDependencies字段：指定了项目开发时所依赖的模块。
     - webpack.base.confg.js是webpack的基础配置文件。
     - .babelrc是Babel解释器的配置文件，存放在根目录下。Babel是一个转码器，项目里需要用它将ES6代码转为ES5代码。
-    - .editorconfig是定义项目的编码规范的文件（多人合作开发项目时十分有用而且必要）。
+    - .editorconfig是定义项目的编码规范的文件（多人合作开发项目时十分有用而且必要）。 
+  
+  - vue-cli模板
+    - 打包代码，放在浏览器上。 执行npm run build命令后，在你的项目根目录生成了dist文件夹，这个文件夹里边就是我们要传到服务器上的文件。
+    dist文件夹下目录包括：
+      1. index.html主页文件:因为我们开发的是单页web应用，所以说一般只有一个html文件。
+      2. static 静态资源文件夹：里边js、CSS和一些图片。
+    - main.js文件：整个项目的入口文件，放在src文件下。从代码看，引入了App的组件和模板。
+    - app.vue文件：
+      1. <template></template>标签包裹的内容：这是模板的HTMLDom结构，里边引入了一张图片和<router-view></router-view>标签，<router-view>标签说明使用了路由机制。
+      2. <script></script>标签包括的js内容；一些页面的动态效果和Vue的逻辑代码。
+      3. <style></style>标签包裹的css内容。特别说明的是<style scoped></style>来声明这些css样式只在本模板中起作用。
+    - router/index.js 路由文件：主要是配置路由。
+
