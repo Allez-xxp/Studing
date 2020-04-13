@@ -188,16 +188,56 @@
 
 # 第四阶段 vue-cli
   - 安装步骤
-   1. 查看是否安装npm，若没有就到官网下载。 npm -v 查看npm版本
-   2. 安装vue-cli, 命令：npm install vue-cli -g（g为全局命令）； vue -V来进行查看vue-cli的版本号
+    1. 查看是否安装npm，若没有就到官网下载。 npm -v 查看npm版本
+    2. 安装vue-cli, 命令：npm install vue-cli -g（g为全局命令）； vue -V来进行查看vue-cli的版本号
   - 项目步骤
-   1. 初始化项目 $ vue init <template-name> <project-name>
-   解释：
-    init：表示我要用vue-cli来初始化项目
-    <template-name>：表示模板名称，vue-cli官方为我们提供了5种模板，
-      1. webpack-一个全面的webpack+vue-loader的模板，功能包括热加载，linting,检测和CSS扩展。
-      2. webpack-simple-一个简单webpack+vue-loader的模板，不包含其他功能，让你快速的搭建vue的开发环境。
-      3. browserify-一个全面的Browserify+vueify 的模板，功能包括热加载，linting,单元检测。
-      4. browserify-simple-一个简单Browserify+vueify的模板，不包含其他功能，让你快速的搭建vue的开发环境。
-      5. -simple-一个最简单的单页应用模板。
-    <project-name>：标识项目名称，这个你可以根据自己的项目来起名字。
+    1. 初始化项目 $ vue init <template-name> <project-name>
+    解释：
+      init：表示我要用vue-cli来初始化项目
+      <template-name>：表示模板名称，vue-cli官方为我们提供了5种模板，
+        1. webpack-一个全面的webpack+vue-loader的模板，功能包括热加载，linting,检测和CSS扩展。
+        2. webpack-simple-一个简单webpack+vue-loader的模板，不包含其他功能，让你快速的搭建vue的开发环境。
+        3. browserify-一个全面的Browserify+vueify 的模板，功能包括热加载，linting,单元检测。
+        4. browserify-simple-一个简单Browserify+vueify的模板，不包含其他功能，让你快速的搭建vue的开发环境。
+        5. -simple-一个最简单的单页应用模板。
+      <project-name>：标识项目名称，这个你可以根据自己的项目来起名字。
+    注意：在实际开发中，一般我们都会使用webpack这个模板，在命令行输入以下命令：vue init webpack vueclitest
+  - webpack目录结构
+    .
+    |-- build                            // 项目构建(webpack)相关代码
+    |   |-- build.js                     // 生产环境构建代码
+    |   |-- check-version.js             // 检查node、npm等版本
+    |   |-- dev-client.js                // 热重载相关
+    |   |-- dev-server.js                // 构建本地服务器
+    |   |-- utils.js                     // 构建工具相关
+    |   |-- webpack.base.conf.js         // webpack基础配置
+    |   |-- webpack.dev.conf.js          // webpack开发环境配置
+    |   |-- webpack.prod.conf.js         // webpack生产环境配置
+    |-- config                           // 项目开发环境配置
+    |   |-- dev.env.js                   // 开发环境变量
+    |   |-- index.js                     // 项目一些配置变量
+    |   |-- prod.env.js                  // 生产环境变量
+    |   |-- test.env.js                  // 测试环境变量
+    |-- src                              // 源码目录
+    |   |-- components                     // vue公共组件
+    |   |-- store                          // vuex的状态管理
+    |   |-- App.vue                        // 页面入口文件
+    |   |-- main.js            // 程序入口文件，加载各种公共组件
+    |-- static             // 静态文件，比如一些图片，json数据等
+    |   |-- data             // 群聊分析得到的数据用于数据可视化
+    |-- .babelrc                         // ES6语法编译配置
+    |-- .editorconfig                    // 定义代码格式
+    |-- .gitignore                 // git上传需要忽略的文件格式
+    |-- README.md                        // 项目说明
+    |-- favicon.ico 
+    |-- index.html                       // 入口页面
+    |-- package.json                     // 项目基本信息
+    ·
+    讲解：
+    - package.json是项目根目录下的一个文件，定义该项目开发所需要的各种模块以及一些项目配置信息（如项目名称、版本、描述、作者等）
+      1. scripts字段：用来指定npm相关命令的缩写。
+      2. dependencies字段：指项目运行时所依赖的模块。
+      3. devDependencies字段：指定了项目开发时所依赖的模块。
+    - webpack.base.confg.js是webpack的基础配置文件。
+    - .babelrc是Babel解释器的配置文件，存放在根目录下。Babel是一个转码器，项目里需要用它将ES6代码转为ES5代码。
+    - .editorconfig是定义项目的编码规范的文件（多人合作开发项目时十分有用而且必要）。
