@@ -186,7 +186,7 @@
     </div>
     </template>
 
-# 第四阶段 vue-cli
+# 第五阶段 vue-cli
   - 安装步骤
     1. 查看是否安装npm，若没有就到官网下载。 npm -v 查看npm版本
     2. 安装vue-cli, 命令：npm install vue-cli -g（g为全局命令）； vue -V来进行查看vue-cli的版本号
