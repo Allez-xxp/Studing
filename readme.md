@@ -186,7 +186,7 @@
     </div>
     </template>
 
-# 第四阶段 vue-cli
+# 第五阶段 vue-cli
   - 安装步骤
     1. 查看是否安装npm，若没有就到官网下载。 npm -v 查看npm版本
     2. 安装vue-cli, 命令：npm install vue-cli -g（g为全局命令）； vue -V来进行查看vue-cli的版本号
@@ -255,3 +255,17 @@
       3. <style></style>标签包裹的css内容。特别说明的是<style scoped></style>来声明这些css样式只在本模板中起作用。
     - router/index.js 路由文件：主要是配置路由。
 
+# 第六阶段 vue-router
+  - 定义：路由是SPA（单页应用）的路径管理器。通俗的说，vue-router就是我们WebApp的链接路径管理系统。（因为vue是单页应用，所以超链接<a>不起作用）
+  - 安装vue-router：npm install vue-router --save-dev
+  - 解读router/index.js文件（见具体文件注释）
+  - 如何添加一个路由和页面？
+    1. 在src/components目录下，新建 Hi.vue 文件。
+    2. 编写文件内容，文件要包括三个部分<template><script><style>。
+    3. 引入 Hi组件：我们在router/index.js文件的上边引入Hi组件。
+    4. 增加路由配置：在router/index.js文件的routes[]数组中，新增加一个对象
+  - router-link 设置导航
+    1. 语法：<router-link to="/">[显示字段]</router-link>
+    2. 解释：
+      - to：是我们的导航路径，要填写的是你在router/index.js文件里配置的path值，如果要导航到默认首页，只需要写成 to=”/” ，
+      - [显示字段] ：就是我们要显示给用户的导航名称，比如首页 新闻页。
