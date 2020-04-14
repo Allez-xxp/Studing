@@ -2,6 +2,8 @@ import Vue from 'vue'   //引入Vue
 import Router from 'vue-router'  //引入vue-router
 import HelloWorld from '@/components/HelloWorld'  //引入根目录下的Hello.vue组件
 import Hi from '@/components/Hi'
+import H1 from '@/components/H1'
+import H2 from '@/components/H2'
 Vue.use(Router)  //Vue全局使用Router
 
 export default new Router({
@@ -14,7 +16,21 @@ export default new Router({
     {
       path: '/Hi',
       name: 'Hi',
-      component: Hi
+      component: Hi,
+      children: [
+        {
+          path:'/',
+          component: Hi
+        },
+        {
+          path:'H1',
+          component: H1
+        },
+        {
+          path:'H2',
+          component: H2
+        },
+      ]
     }
   ]
 })

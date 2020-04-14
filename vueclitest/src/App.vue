@@ -3,10 +3,13 @@
     <img src="./assets/logo.png">
     <div>
       <!-- 导航做法：router-link标签 -->
-       <router-link to="/">首页</router-link>  <!--相当于a标签，链接作用 -->
-       <router-link to="/Hi">Hi页</router-link>
+       <router-link to="/">首页</router-link> | <!--相当于a标签，链接作用 -->
+       <router-link to="/Hi">Hi页</router-link> |
+       <router-link to="/Hi/H1">H1页</router-link> |
+       <router-link to="/Hi/H2">H2页</router-link> 
     </div>
-    <router-view/>
+    <!-- 全局路由 -->
+    <router-view/>  
     
   </div>
 </template>

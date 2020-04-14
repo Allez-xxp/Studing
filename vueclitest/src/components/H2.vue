@@ -1,16 +1,15 @@
 <template>
     <div >
     <h1>{{message}}</h1>
-    <!-- 控制hi所属子路由 -->
-    <router-view></router-view>
+    
     </div>
 </template>
 <script>
 export default {
-    name: 'hi',
+    name: 'h2',
     data() {
         return {
-            message: 'hi, I am xxp'
+            message: 'hi, I am xxp-2'
         }
     }
 }
