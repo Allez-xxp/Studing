@@ -273,3 +273,12 @@
   - 子路由
     1. 在router/index.js文件中配置Hi路径段，添加children字段，用于配置Hi子路由
     2. <router-view/> 既有全局作用，又有局部作用
+
+  - vue-router的参数传递
+    1. name传递参数。 在App.vue中设置<p>{{$route.name}}</p>，接收参数值
+    2.通过<router-link> 标签中的to传参
+     - 语法：<router-link :to="{name:xxx,params:{key:value}}">valueString</router-link> 
+     - 解释：
+      - name：就是我们在路由配置文件中起的name值。
+      - params：就是我们要传的参数，它也是对象形势，在对象里可以传递多个值。
+  

@@ -1,12 +1,12 @@
 <template>
     <div >
-    <h1>{{message}}</h1>
+    <h1>{{message}}-{{$route.params.username}}- {{$route.params.id}}</h1>
     
     </div>
 </template>
 <script>
 export default {
-    name: 'h2',
+    name: 'H2',
     data() {
         return {
             message: 'hi, I am xxp-2'
