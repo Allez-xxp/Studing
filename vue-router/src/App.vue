@@ -2,6 +2,11 @@
   <div id="app">
     <img src="./assets/logo.png">
     <div>
+      <button @click="goBack">后退</button>
+      <button @click="goGo">前进</button>
+      <button @click="goHome">返回首页</button>
+    </div>
+    <div>
       <router-link to="/">首页</router-link> | 
       <router-link to="/params/198/武汉加油，中国加油！">参数页</router-link> |
       <router-link to="/goHome">Home页</router-link> | 
@@ -18,7 +23,18 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    goBack() { 
+      this.$router.go(-1);
+    },
+    goGo() { 
+      this.$router.go(1);
+    },
+    goHome() {
+      this.$router.push('/');
+    }
+  }
 }
 </script>
 

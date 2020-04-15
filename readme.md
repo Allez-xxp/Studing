@@ -342,3 +342,13 @@
         next();
       }
 
+  - vue-router的编程式导航 跳转页面
+    - 前进 $router.go(1)；进入下一个页面
+    - 后退 $router.go(-1)；返回上一个页面
+    - 进入任意页面 $router.push('/xxx') 
+    步骤相同：
+      1. 编写按钮，绑定对应的goBack()方法
+      2. 在我们的script模块中写入goback()方法，并使用this.$router.go(-1),进行后退操作。
+
+
+
