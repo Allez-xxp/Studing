@@ -295,3 +295,9 @@
     1. 如设置一个新的路由，不配置任何组件，直接使用 redirect: '/'去往对应的path.
     2. 使用redirect传递参数：复制重定向路径的path参数
     redirect:'/params/:newsId(\\d+)/:newsTitle'
+
+  - alias别名应用
+    定义：类似于redirect效果
+    redirect和alias的区别： 
+      - redirect：仔细观察URL，redirect是直接改变了url的值，把url变成了真实的path路径。
+      - alias：URL路径没有别改变，这种情况更友好，让用户知道自己访问的路径，只是改变了<router-view>中的内容。
