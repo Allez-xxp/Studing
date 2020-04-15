@@ -8,6 +8,7 @@
       <router-link to="/goParams/198/武汉加油，中国加油！">Params首页</router-link> |
       <router-link to="/H1">H1页</router-link> |
       <router-link to="/Allez">Allez</router-link> |
+      <router-link to="/aaaa">Error</router-link> |
     </div>
     <transition name="f" mode="out-in">
       <router-view/>

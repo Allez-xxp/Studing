@@ -313,3 +313,15 @@
         1. in-out:新元素先进入过渡，完成之后当前元素过渡离开。
         2. out-in:当前元素先进行过渡离开，离开完成后新元素过渡进入。
 
+  - mode设置和404页面处理
+    - mode 路径表示的两种方式
+      1. 设置history； /#/path
+      2. 设置hash； /path/
+    - 404页面设置：当用户输入错误的页面，给他们一个友好的提示
+      1. 配置路由文件index.js
+        {
+          path:'*',
+          component:Error
+        }
+      2. 新建404页面，即Error.vue
+      3. <router-link to="/aaaa">Error</router-link> 乱写一个路径测试404页面
