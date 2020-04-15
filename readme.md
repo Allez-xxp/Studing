@@ -290,3 +290,8 @@
     - 在inex.js文件里以冒号的形式设置参数，:冒号的形式传递参数，这就是对参数的绑定。
     - 在app.vue文件里直接利用URL传值
     - 正则表达式在URL传值中，确保只能传数字
+
+  - vue-router重定向-redirect
+    1. 如设置一个新的路由，不配置任何组件，直接使用 redirect: '/'去往对应的path.
+    2. 使用redirect传递参数：复制重定向路径的path参数
+    redirect:'/params/:newsId(\\d+)/:newsTitle'

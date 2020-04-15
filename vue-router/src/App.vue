@@ -3,7 +3,9 @@
     <img src="./assets/logo.png">
     <div>
       <router-link to="/">首页</router-link> | 
-      <router-link to="/params/198/武汉加油，中国加油！">参数页</router-link> 
+      <router-link to="/params/198/武汉加油，中国加油！">参数页</router-link> |
+      <router-link to="/goHome">Home页</router-link> | 
+      <router-link to="/goParams/198/武汉加油，中国加油！">Params首页</router-link> |
     </div>
     <router-view/>
     
