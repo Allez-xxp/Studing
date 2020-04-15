@@ -325,3 +325,20 @@
         }
       2. 新建404页面，即Error.vue
       3. <router-link to="/aaaa">Error</router-link> 乱写一个路径测试404页面
+  
+  - vue-router的钩子函数
+    - 在配置文件index.js文件中写钩子函数
+    beforeEnter:(to,from,next) =>{}
+      1. to:路由将要跳转的路径信息，信息是包含在对像里边的。
+      2. from:路径跳转前的路径信息，也是一个对象的形式。
+      3. next:路由的控制参数，常用的有next(true)和next(false)。
+    - 在模板写钩子函数（两种）
+      1. beforeRouteEnter：在路由进入前的钩子函数。
+      beforeRouteEnter:(to,from,next)=>{
+        next();
+      }
+      2. beforeRouteLeave：在路由离开前的钩子函数。
+      beforeRouteLeave: (to, from, next) => {
+        next();
+      }
+

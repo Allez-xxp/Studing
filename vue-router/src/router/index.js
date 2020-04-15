@@ -17,7 +17,12 @@ export default new Router({
     },
     {
       path:'/params/:newsId(\\d+)/:newsTitle',
-      component: params
+      component: params,
+      beforeEnter: (to,from,next) =>{  //钩子函数
+        console.log(to);
+        console.log(from);
+        next();  //路由的控制参数
+      }
     },
     {
       path: '/goHome',
