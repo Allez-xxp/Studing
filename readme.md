@@ -301,3 +301,15 @@
     redirect和alias的区别： 
       - redirect：仔细观察URL，redirect是直接改变了url的值，把url变成了真实的path路径。
       - alias：URL路径没有别改变，这种情况更友好，让用户知道自己访问的路径，只是改变了<router-view>中的内容。
+
+  - vue-router的过渡动画
+    - <transition name="fade" mode="out-in">标签包含<router-view />标签
+      - 组件过渡过程中，会有四个css过渡类名进行切换。（四个类名与transition的name属性取值有关）
+        1. fade-enter:进入过渡的开始状态，元素被插入时生效，只应用一帧后立刻删除。
+        2. fade-enter-active:进入过渡的结束状态，元素被插入时就生效，在过渡过程完成后移除。
+        3. fade-leave:离开过渡的开始状态，元素被删除时触发，只应用一帧后立刻删除。
+        4. fade-leave-active:离开过渡的结束状态，元素被删除时生效，离开过渡完成后被删除。 
+      - 过渡模式mode：
+        1. in-out:新元素先进入过渡，完成之后当前元素过渡离开。
+        2. out-in:当前元素先进行过渡离开，离开完成后新元素过渡进入。
+

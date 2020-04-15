@@ -9,8 +9,9 @@
       <router-link to="/H1">H1页</router-link> |
       <router-link to="/Allez">Allez</router-link> |
     </div>
-    <router-view/>
-    
+    <transition name="f" mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -28,5 +29,18 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.f-enter{
+  opacity: 0;  
+}
+.f-enter-active{
+  transition: opacity .5s;
+}
+.f-leave{
+  opacity: 1;
+}
+.f-leave-active{
+  opacity: 0;
+  transition: opacity .5s;
 }
 </style>
