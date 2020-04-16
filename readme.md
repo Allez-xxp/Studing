@@ -356,5 +356,24 @@
     - 定义：vuex是一个专门为vue.js设计的集中式状态管理架构。状态？我把它理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。
     - 安装vuex命令：npm install vuex --save
 
+  - state 访问状态对象，即SPA（单页应用）的共享值
+    - 将状态对象赋值给内部对象（三种方法）
+      1. 利用computed的计算属性赋值
+      computed: {
+          count() {
+              return this.$store.state.count;
+          }
+      },
+      2. 通过mapState的对象赋值
+      import {mapState} from 'vuex';
+      computed: mapState({
+          count: state => state.count
+      }),
+      3. 通过mapState的数组赋值(实际开发常用)
+      computed: mapState(["count"]),
+
+
+
+
 
 
