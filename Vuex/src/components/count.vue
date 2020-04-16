@@ -1,16 +1,17 @@
 <template>
 <div>
     <h2>{{msg}}</h2><hr/>
-    <h3>{{$store.state.count}}-{{count}}</h3>
+    <!-- <h3>{{$store.state.count}}-{{count}}</h3> -->
+    <h3>{{count}}</h3> 
     <p>
-        <button @click="$store.commit('add')">增加</button>
-        <button @click="$store.commit('reduce')">减少</button>
+        <button @click="$store.commit('add',10)">增加</button>
+        <button @click="reduce">减少</button>
     </p>
 </div>
 </template>
 <script>
 import store from '@/vuex/store';
-import {mapState} from 'vuex';
+import {mapState, mapMutations} from 'vuex';
 export default {
     data() {
         return {
@@ -31,6 +32,7 @@ export default {
 
     // 第三种方法 通过mapState的数组赋值
     computed: mapState(["count"]),
+    methods: mapMutations(['add','reduce']),
     store
 }
 </script>

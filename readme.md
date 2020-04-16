@@ -372,6 +372,20 @@
       3. 通过mapState的数组赋值(实际开发常用)
       computed: mapState(["count"]),
 
+  - mutations 修改状态
+    - 传递参数
+      - Vuex提供commit方法用于修改状态
+      在store.js文件中给add方法添加一个参数，在commit()方法中给一个要传递的值
+      <button @click="$store.commit('add',10)">增加</button>
+    - 模板获取mutations方法，即修改状态引用到模板
+      - 在模板count.vue文件里引用mapMutations
+      import { mapState,mapMutations } from 'vuex';
+      - 在模板<script>标签添加methods属性，加入mapMutations
+      methods:mapMutations([
+        'add','reduce'
+      ]),
+      - 直接调用reduce方法
+      <button @click="reduce">减少</button>
 
 
 
