@@ -11,7 +11,7 @@
 </template>
 <script>
 import store from '@/vuex/store';
-import {mapState, mapMutations} from 'vuex';
+import {mapState, mapMutations, mapGetters} from 'vuex';
 export default {
     data() {
         return {
@@ -31,8 +31,19 @@ export default {
     // }),
 
     // 第三种方法 通过mapState的数组赋值
-    computed: mapState(["count"]),
-    methods: mapMutations(['add','reduce']),
+    computed: {
+        ...mapState(["count"]),
+        // gettters过滤器
+        // count() {
+        //     return this.$store.getters.count;
+        // }
+
+        // 用mapGetters简化模板
+        ...mapGetters(["count"]),
+    },
+    methods:mapMutations([
+        'add','reduce'
+      ]),
     store
 }
 </script>

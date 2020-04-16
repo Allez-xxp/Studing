@@ -387,6 +387,15 @@
       - 直接调用reduce方法
       <button @click="reduce">减少</button>
 
+  - getters 计算过滤操作
+    - 理解：getters从表面是获得的意思，可以把他看作在获取数据之前进行的一种再编辑,相当于对数据的一个过滤和加工。你可以把它看作store.js的计算属性。
+    - 在输出前增加10做法
+      1. 在store.js文件中声明getters属性
+      2. 将getters属性引入Vuew.Store()
+      3. 在count.vue中对computed进行配置改造（ES6运算符'...'）
+      4. 用mapGetters简化模板computed写法
+
+
 
 
 
