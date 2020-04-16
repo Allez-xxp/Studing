@@ -350,5 +350,11 @@
       1. 编写按钮，绑定对应的goBack()方法
       2. 在我们的script模块中写入goback()方法，并使用this.$router.go(-1),进行后退操作。
 
+# vuex
+  - 入门介绍
+    - 作用：数据仓库；状态管理器；
+    - 定义：vuex是一个专门为vue.js设计的集中式状态管理架构。状态？我把它理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。
+    - 安装vuex命令：npm install vuex --save
+
 
 
