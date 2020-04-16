@@ -372,7 +372,7 @@
       3. 通过mapState的数组赋值(实际开发常用)
       computed: mapState(["count"]),
 
-  - mutations 修改状态
+  - mutations 同步改变状态
     - 传递参数
       - Vuex提供commit方法用于修改状态
       在store.js文件中给add方法添加一个参数，在commit()方法中给一个要传递的值
@@ -394,6 +394,22 @@
       2. 将getters属性引入Vuew.Store()
       3. 在count.vue中对computed进行配置改造（ES6运算符'...'）
       4. 用mapGetters简化模板computed写法
+
+  - actions 异步修改状态
+    1. 在store.js声明actions属性（可以调用mutations里的方法）
+    2. actions里写了两个方法addAction和reduceAction
+    addAction(context){   
+        context.commit('add',10)
+    },
+    reduceAction({commit}){
+        commit('reduce')
+    }
+    - 解释：都用commit方法调用了mutations里的方法
+      - context：上下文对象，这里你可以理解称store本身。
+      - {commit}：直接把commit对象传递过来，可以让方法体逻辑和代码更清晰明。
+    3. 模板应用
+      - 异步检验：使用定时器，进行延迟加载
+      setTimeOut(()=>{context.commit(reduce)},3000);
 
 
 
