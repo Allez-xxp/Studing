@@ -411,6 +411,25 @@
       - 异步检验：使用定时器，进行延迟加载
       setTimeOut(()=>{context.commit(reduce)},3000);
 
+  - module 模块组
+    - 定义：状态管理器的模块组操作，用于项目的复杂性大的项目。
+    - 声明模块组
+    const moduleA={
+      state,mutations,getters,actions
+    }
+    - 修改Vuex.Store内容
+    export default new Vuex.Store({
+      modules:{a:moduleA}
+    })
+    - 模板使用module
+    <h3>{{$store.state.a.count}}</h3> 或{{count}} 则
+    computed:{
+      count(){
+          return this.$store.state.a.count;
+      }
+    };
+
+
 
 
 

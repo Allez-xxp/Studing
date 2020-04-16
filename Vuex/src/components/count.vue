@@ -1,8 +1,8 @@
 <template>
 <div>
     <h2>{{msg}}</h2><hr/>
-    <!-- <h3>{{$store.state.count}}-{{count}}</h3> -->
-    <h3>{{count}}</h3> 
+    <h3>{{$store.state.a.count}}-{{count}}</h3>
+    <!-- <h3>{{count}}</h3>  -->
     <p>
         <button @click="$store.commit('add',10)">增加</button>
         <button @click="reduce">减少</button>
@@ -36,7 +36,7 @@ export default {
 
     // 第三种方法 通过mapState的数组赋值
     computed: {
-        ...mapState(["count"]),
+        // ...mapState(["count"]),
         // gettters过滤器
         // count() {
         //     return this.$store.getters.count;
@@ -44,6 +44,9 @@ export default {
 
         // 用mapGetters简化模板
         // ...mapGetters(["count"]),
+        count(){
+            return this.$store.state.a.count;
+        }
     },
     methods:{
         ...mapMutations(['add','reduce']),
