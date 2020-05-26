@@ -76,12 +76,45 @@
 // console.log(arr1); //'www','jspang','com'
 
 // 4.2 rest运算符（...）
-function xxp(first,...arg){
-    // console.log(arg.length);
-    // for…of的循环可以避免我们开拓内存空间，增加代码运行效率
-    for(let val of arg){
-        console.log(val);
-    }
-}
-xxp(0,1,2,3,4,5,6,7);
+// function xxp(first,...arg){
+//     // console.log(arg.length);
+//     // for…of的循环可以避免我们开拓内存空间，增加代码运行效率
+//     for(let val of arg){
+//         console.log(val);
+//     }
+// }
+// xxp(0,1,2,3,4,5,6,7);
+
+// 5.字符串模板
+// （1）ES5的拼接字符串案例：ES5下必须用+jspang+这样的形式进行拼接（容易出错）
+// let jspang='技术胖';
+// let blog = '非常高兴你能看到这篇文章，我是你的老朋友'+jspang+'。这节课我们学习字符串模版。';
+// document.write(blog);
+// （2）ES6中提供字符串模板：连接符`${}`；支持HTML标签；支持运算
+// let jspang='技术胖';
+// let blog = `<b>非常高兴你能看到这篇文章</b>，我是你的老朋友${jspang}。<br/>这节课我们学习字符串模版。`;
+// document.write(blog);
+
+// 字符串模板`${}`:支持运算
+let a=1;
+let b=2;
+let result=`<br/>${a+b}<br/>`;
+document.write(result);
+// 字符串模板`${}`: 字符串查找
+// （1）ES5写法：indexOf索引值，要先告诉我们索引位置（不实用）
+// let jspang='技术胖';
+// let blog = '非常高兴你能看到这篇文章，我是你的老朋友技术胖。这节课我们学习字符串模版。';
+// document.write(blog.indexOf(jspang));
+// （2）ES6写法：ES6直接用①includes就可以判断，不再返回索引值。
+let jspang='技术胖';
+let blog = '非常高兴你能看到这篇文章，我是你的老朋友技术胖。这节课我们学习字符串模版。';
+document.write(blog.includes(jspang));
+// ②判断开头是否存在
+document.write(blog.startsWith(jspang));
+// ③判断结尾是否存在
+document.write(blog.endsWith(jspang));
+
+// 字符串复制
+document.write('jspang|'.repeat(3));
+
 

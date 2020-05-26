@@ -61,3 +61,21 @@
     - rest运算符（...）
         - 定义：用于声明方法时，当传入的参数不确定时，使用rest（剩余）运算符
 
+- 换一种方法打包：
+    - 新建一个文件夹，并初始化 npm init
+    - 全局安装live-server npm install -g live-server
+    - 新建index.html 主页面
+    - 新建index.js ES6代码
+    - package.json 配置文件
+5. 字符串模板
+    - 字符串拼接
+        1. ES5中，必须要用'+'进行字符串之间的拼接 
+        2. ES6中,提供字符串模板：连接符`${}`进行字符串拼接；支持空格；HTML标签；简单运算
+    - 字符串查找
+        1. ES5写法：indexOf索引值，要先告诉我们索引位置（不实用）
+        2. ES6直接用includes就可以判断，不再返回索引值  
+        3. 判断开头是否存在 另一个字符串.startsWith(查找的一个字符串名)
+        4. 判断结尾是否存在 另一个字符串.endsWith(查找的一个字符串名)
+    - 字符串复制 repeat(次数)
+    document.write('jspang|'.repeat(3));
+
