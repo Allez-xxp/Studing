@@ -51,7 +51,37 @@
 // console.log(foo);
 
 // 字符串解构（此时字符串被转换成了一个类似数组的对象。）
-const [a,b,c] = 'xxp';
-console.log(a);
-console.log(b);
-console.log(c);
+// const [a,b,c] = 'xxp';
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// 4.1 扩展运算符(...)
+// (1)
+// function xxp(...arg){
+//     console.log(arg[0]);
+//     console.log(arg[1]);
+//     console.log(arg[2]);
+//     console.log(arg[3]);
+
+// }
+// xxp(1,2,3);  //输出1,2,3，undefined（可以输入多个值，不会报错）
+// （2）对象扩展运算符作用：对内存堆栈的引用，不改变其他变量的值
+// let arr1=['www','jspang','com'];
+// //let arr2=arr1;  //这样做会改变arr1的内容
+// let arr2=[...arr1];
+// console.log(arr2);
+// arr2.push('shengHongYu'); // 给arr2追加内容
+// console.log(arr2); //'www','jspang','com','shengHongYu'
+// console.log(arr1); //'www','jspang','com'
+
+// 4.2 rest运算符（...）
+function xxp(first,...arg){
+    // console.log(arg.length);
+    // for…of的循环可以避免我们开拓内存空间，增加代码运行效率
+    for(let val of arg){
+        console.log(val);
+    }
+}
+xxp(0,1,2,3,4,5,6,7);
+
