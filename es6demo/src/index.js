@@ -152,7 +152,26 @@
 // console.log(Number.MAX_SAFE_INTEGER);
 // console.log(Number.MIN_SAFE_INTEGER);
 // （2）安全整数判断 isSafeInteger( )
-let a= Math.pow(2,53)-1;
-console.log(Number.isSafeInteger(a));//false
+// let a= Math.pow(2,53)-1;
+// console.log(Number.isSafeInteger(a));//false
+
+// 7. ES6的新增数组知识
+// （1）json的数组格式; Array.from()方法进行类型转换
+// let json = {
+//     '0': 'xxp',
+//     '1':'allez',
+//     '2':'work',
+//     length:3
+// }
+// let arr = Array.from(json);
+// console.log(arr)
+// （2）Array.of()方法
+// let arr = Array.of(3,4,5,6);
+// console.log(arr);
+// （3）find()实例方法，提前声明一个实例，再调用find()方法
+let arr=[1,2,3,4,5,6,7,8,9];
+console.log(arr.find(function(value,index,arr){
+    return value > 5;
+}))
 
 

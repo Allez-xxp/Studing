@@ -92,5 +92,28 @@
         - ES6提供了最大安全整数 Number.MAX_SAFE_INTEGER（常量大写）
         - 最小安全整数 Number.MIN_SAFE_INTEGER
         - 安全整数判断 isSafeInteger( )
-
+7. ES6的新增数组知识
+    - json的数组格式
+    let json = {
+        '0': 'xxp',
+        '1':'allez',
+        '2':'work',
+        length:3
+    }
+    - Array.from() 进行类型转换，json代码转换成数组格式
+    let arr = Array.from(json); //将json代码转换成数组格式
+    - Array.of()方法
+        - 作用：负责把一堆文本或者变量转换成数组。
+        - 扩展：得到一个类似数组的字符串，使用eval来进行转换（eval效率是很低的，它会拖慢我们的程序。被Array.of()方法代替）
+    - find()实例方法
+        - 前提：需要提前声明实例
+        - find()方法需要传入一个匿名函数并传三个形参
+            - 语法：
+            实例名.find(function(value,index,arr){
+                代码块
+            })
+            - 解释参数
+            (1) value:表示当前查找的值。
+            (2) index:表示当前查找的数组索引。
+            (3) arr:表示当前数组。
 
