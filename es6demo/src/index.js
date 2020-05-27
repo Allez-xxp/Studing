@@ -155,7 +155,7 @@
 // let a= Math.pow(2,53)-1;
 // console.log(Number.isSafeInteger(a));//false
 
-// 7. ES6的新增数组知识
+// 7. ES6的新增数组知识（1）
 // （1）json的数组格式; Array.from()方法进行类型转换
 // let json = {
 //     '0': 'xxp',
@@ -169,9 +169,28 @@
 // let arr = Array.of(3,4,5,6);
 // console.log(arr);
 // （3）find()实例方法，提前声明一个实例，再调用find()方法
-let arr=[1,2,3,4,5,6,7,8,9];
-console.log(arr.find(function(value,index,arr){
-    return value > 5;
-}))
+// let arr=[1,2,3,4,5,6,7,8,9];
+// console.log(arr.find(function(value,index,arr){
+//     return value > 5;
+// }))
 
+// 8. ES6的新增数组知识（2）
+// （1）fill()实例方法：对数组进行填充(替换数组中的元素)。
+// 它接收三个参数，第一个参数是填充的变量，第二个是开始填充的位置，第三个是填充到的位置。
+// let arr = ['allez','xxp','春花秋月'];
+// arr.fill('冬暖夏凉',2,3);
+// console.log(arr);
+// （2）数组循环 for of循环
+// let arr = ['allez','xxp','春花秋月'];
+// // for (let i of arr.keys()) { //输出数组索引
+// // for (let i of arr.entries()) {
+// for (let [i,val] of arr.entries()){ //同时输出数组内容和索引
+//     console.log(i+':'+val);
+// }
+// (3)entries()实例方法，next()方法获取下一个值
+let arr=['a','b','c']
+let list=arr.entries();
+console.log(list.next().value); //a
+console.log(list.next().value); //b
+console.log(list.next().value); //c
 

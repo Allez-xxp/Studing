@@ -92,7 +92,7 @@
         - ES6提供了最大安全整数 Number.MAX_SAFE_INTEGER（常量大写）
         - 最小安全整数 Number.MIN_SAFE_INTEGER
         - 安全整数判断 isSafeInteger( )
-7. ES6的新增数组知识
+7. ES6的新增数组知识(1)
     - json的数组格式
     let json = {
         '0': 'xxp',
@@ -116,4 +116,26 @@
             (1) value:表示当前查找的值。
             (2) index:表示当前查找的数组索引。
             (3) arr:表示当前数组。
+8. ES6的新增数组知识(2)
+    - fill()实例方法
+        - 作用：对数组进行填充(替换数组中的元素)。
+        - 语法：接收三个参数，第一个参数是填充的变量，第二个是开始填充的位置，第三个是填充到的位置。
+    - 数组循环 for of循环
+        - 语法
+        let arr=['a','b','c'] //先声明一个实例
+        for (let item of arr){ for of循环输出数组内容
+            console.log(item);
+        }
+        - 输出数组的索引 arr.keys()方法
+        for (let i of arr.keys())
+        - 同时输出数组内容和索引 entries()实例方法
+        for (let [i,val] of arr.entries())
+    - entries()实例方法
+        - 说明：entries()实例方式生成的是Iterator形式的数组
+        - 优点：可以让我们在需要时用next()手动跳转到下一个值。
+        let arr=['a','b','c']
+        let list=arr.entries();
+        console.log(list.next().value); //a
+        console.log(list.next().value); //b
+        console.log(list.next().value); //c
 
