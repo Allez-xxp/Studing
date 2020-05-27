@@ -96,25 +96,63 @@
 // document.write(blog);
 
 // 字符串模板`${}`:支持运算
-let a=1;
-let b=2;
-let result=`<br/>${a+b}<br/>`;
-document.write(result);
+// let a=1;
+// let b=2;
+// let result=`<br/>${a+b}<br/>`;
+// document.write(result);
 // 字符串模板`${}`: 字符串查找
 // （1）ES5写法：indexOf索引值，要先告诉我们索引位置（不实用）
 // let jspang='技术胖';
 // let blog = '非常高兴你能看到这篇文章，我是你的老朋友技术胖。这节课我们学习字符串模版。';
 // document.write(blog.indexOf(jspang));
 // （2）ES6写法：ES6直接用①includes就可以判断，不再返回索引值。
-let jspang='技术胖';
-let blog = '非常高兴你能看到这篇文章，我是你的老朋友技术胖。这节课我们学习字符串模版。';
-document.write(blog.includes(jspang));
+// let jspang='技术胖';
+// let blog = '非常高兴你能看到这篇文章，我是你的老朋友技术胖。这节课我们学习字符串模版。';
+// document.write(blog.includes(jspang));
 // ②判断开头是否存在
-document.write(blog.startsWith(jspang));
+// document.write(blog.startsWith(jspang));
 // ③判断结尾是否存在
-document.write(blog.endsWith(jspang));
+// document.write(blog.endsWith(jspang));
 
 // 字符串复制
-document.write('jspang|'.repeat(3));
+// document.write('jspang|'.repeat(3));
+
+// 6. ES6的数字操作
+// （1）二进制声明 binary
+// let binary = 0B010101;
+// console.log(binary);
+// （2）八进制声明 octal 
+// let octal = 0o666;
+// console.log(octal);
+
+// 进行数字验证
+// (1)Number.isFinite()
+// let a= 11/4;
+// console.log(Number.isFinite(a));//true
+// console.log(Number.isFinite('jspang'));//false
+// console.log(Number.isFinite(NaN));//false
+// console.log(Number.isFinite(undefined));//false
+// (2)Number.isNaN()
+// console.log(Number.isNaN(NaN)); //true
+
+// 判断是否为整数 Number.isInteger()
+// let a=123.1;
+// console.log(Number.isInteger(a)); //false
+
+// 整数转换Number.parseInt()和浮点型转换Number.parseFloat()
+// let a='9.18';
+// console.log(Number.parseInt(a)); 
+// console.log(Number.parseFloat(a));
+
+//  整数取值范围操作
+//  最大值
+// let a = Math.pow(2,53)-1;
+// console.log(a); //9007199254740991
+// （1）ES6提供了最大安全整数和最小安全整数
+// console.log(Number.MAX_SAFE_INTEGER);
+// console.log(Number.MIN_SAFE_INTEGER);
+// （2）安全整数判断 isSafeInteger( )
+let a= Math.pow(2,53)-1;
+console.log(Number.isSafeInteger(a));//false
 
 

@@ -78,4 +78,19 @@
         4. 判断结尾是否存在 另一个字符串.endsWith(查找的一个字符串名)
     - 字符串复制 repeat(次数)
     document.write('jspang|'.repeat(3));
+6. ES6的数字操作
+    - 二进制声明 binary 第一个是0，第二个是B
+    - 八进制声明 octal 第一个是0，第二个是o
+    - 数字判断
+        - Number.isFinite( ):进行数字验证。只要是数字，不论是浮点型还是整数都会返回true，其他时候会返回false。
+        - Number.isNaN():判断是不是数字。不是数字返回true，是数字返回false
+    - 判断是否为整数 Number.isInteger()
+    - 整数转换  Number.parseInt()
+    - 浮点型转换  Number.parseFloat()
+    - 整数取值范围操作
+        - 最大值获取 Math.pow(2.53) 2的53次方 （容易出错）
+        - ES6提供了最大安全整数 Number.MAX_SAFE_INTEGER（常量大写）
+        - 最小安全整数 Number.MIN_SAFE_INTEGER
+        - 安全整数判断 isSafeInteger( )
+
 
