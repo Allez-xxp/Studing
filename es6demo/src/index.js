@@ -188,9 +188,39 @@
 //     console.log(i+':'+val);
 // }
 // (3)entries()实例方法，next()方法获取下一个值
-let arr=['a','b','c']
-let list=arr.entries();
-console.log(list.next().value); //a
-console.log(list.next().value); //b
-console.log(list.next().value); //c
+// let arr=['a','b','c']
+// let list=arr.entries();
+// console.log(list.next().value); //a
+// console.log(list.next().value); //b
+// console.log(list.next().value); //c
 
+// 9.ES6中的箭头函数和扩展
+// （1）ES5的函数写法（加法）
+// function add(a,b) {
+//     return a+b;
+// }
+// console.log(add(1,2));
+// (2)ES6中函数增加了一个默认值写法
+// function add(a,b=1) {
+    // // （3）主动抛出错误
+    // if(a==0) {
+    //     throw new Error('A is Error');
+    // }
+// （4）严谨模式，ES6中，可以放在函数体中，但是不能使用默认值
+function add(a,b) {
+    
+    'use strict'
+    return a+b;
+}
+// console.log(add(1,2));
+// 在严谨模式下，获得传入参数的个数 函数名.length。
+// 如果去掉严谨模式，使用默认值，会出现错误（传递参数为1）。说明a，b要是必须传入的参数
+console.log(add.length);
+
+// （5）箭头函数用法和注意
+// ·使用箭头函数时，如果{}中只有返回值，可以不写{}，直接写。
+// ·一定要使用return时，一定要加上{}
+// ·如果方法体中代码不止一句，方法体外要加上{}
+// 箭头函数不能当作构造函数用，不能使用new方法
+var add = (a,b=2) => a+b;
+console.log(add(1))
