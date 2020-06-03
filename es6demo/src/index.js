@@ -207,20 +207,75 @@
     //     throw new Error('A is Error');
     // }
 // （4）严谨模式，ES6中，可以放在函数体中，但是不能使用默认值
-function add(a,b) {
+// function add(a,b) {
     
-    'use strict'
-    return a+b;
-}
+//     'use strict'
+//     return a+b;
+// }
 // console.log(add(1,2));
 // 在严谨模式下，获得传入参数的个数 函数名.length。
 // 如果去掉严谨模式，使用默认值，会出现错误（传递参数为1）。说明a，b要是必须传入的参数
-console.log(add.length);
+// console.log(add.length);
 
 // （5）箭头函数用法和注意
 // ·使用箭头函数时，如果{}中只有返回值，可以不写{}，直接写。
 // ·一定要使用return时，一定要加上{}
 // ·如果方法体中代码不止一句，方法体外要加上{}
 // 箭头函数不能当作构造函数用，不能使用new方法
-var add = (a,b=2) => a+b;
-console.log(add(1))
+// var add = (a,b=2) => a+b;
+// console.log(add(1))
+
+// 10. ES6的函数解构和数组补漏
+// （1）对象的函数解构 json
+// 创建对象
+// let json = {
+//     a: 'xxp',
+//     b: 'allez'
+// }
+// function fun(x,y='cmq') {
+//     console.log(x,y);  //返回值：{a: "xxp", b: "allez"}
+//     // 直接调用json格式数据，不需要再一个个传递参数
+// }
+// fun(json);
+
+// （2）数组解构
+// let arr = ['a','b','c'];
+// function fun(a,b,c){
+//     console.log(a,b,c);
+// }
+// fun(...arr);
+
+// (3) in用法
+// 声明对象
+// let obj = {
+//     a: 'xxp',
+//     b: 'allez'
+// }
+// // 使用in，判断该对象中有没有这个元素(返回true为有，false为没有)；是否为空
+// console.log('a' in obj);
+// 声明数组
+// let arr = ['xxp','lyp','cmq','zl'];
+// // 判断该数组某个索引对应的位置是否为空；返回true则有值，返回false则无值
+// console.log(0 in arr);
+
+// （4）遍历数组
+// · forEach方法: val表示元素值，index表示索引值
+// let arr = ['xxp','lyp','cmq','zl'];
+// arr.forEach((val,index) => console.log(index,val));
+// · filter方法
+// let arr = ['xxp','lyp','cmq','zl'];
+// arr.filter(x => console.log(x));
+// · some方法
+// let arr = ['xxp','lyp','cmq','zl'];
+// arr.some(x => console.log(x));
+// · map方法：将指定数组的内容都替换为目标内容；如何输出
+// let arr = ['xxp','lyp','cmq','zl'];
+// console.log(arr.map(x => 'abc'));
+
+// （5）数组转换成字符串方法
+// · toString()方法（用逗号隔开）
+// let arr = ['xxp','lyp','cmq','zl'];
+// console.log(arr.toString());
+// · join方法: 在数组元素中添加间隔符号 | -(字符串类型)
+// let arr = ['xxp','lyp','cmq','zl'];
+// console.log(arr.join('|'));
