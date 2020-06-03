@@ -279,3 +279,38 @@
 // · join方法: 在数组元素中添加间隔符号 | -(字符串类型)
 // let arr = ['xxp','lyp','cmq','zl'];
 // console.log(arr.join('|'));
+
+// 11. ES6的对象
+// （1）对象的赋值
+// ES6允许把声明的变量直接赋值给对象
+// let name="jspang";
+// let skill= 'web';
+// var obj= {name,skill};
+// console.log(obj);  //Object {name: "jspang", skill: "web"}
+
+// （2）对象key的构建: 不知道key表示什么
+// let key='skill';
+// var obj={
+//     [key]:'web'
+// }
+// console.log(obj.skill);   // {'skill':'web'}
+
+// （3）Object.is()方法：用于比较对象值是否相等
+// var obj1 = {name:'jspang'};
+// var obj2 = {name:'jspang'};
+// console.log(obj1.name === obj2.name);//true
+// console.log(Object.is(obj1.name,obj2.name)); //true
+// // === 和 is方法的区别
+// // ===为同值相等，is()为严格相等。
+// console.log(+0 === -0);  //true
+// console.log(NaN === NaN ); //false
+// console.log(Object.is(+0,-0)); //false
+// console.log(Object.is(NaN,NaN)); //true
+
+// （4）Object.assign( )合并对象
+// var a={a:'jspang'};
+// var b={b:'技术胖'};
+// var c={c:'web'};
+
+// let d=Object.assign(a,b,c)
+// console.log(d);
