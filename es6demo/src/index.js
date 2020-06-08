@@ -314,3 +314,37 @@
 
 // let d=Object.assign(a,b,c)
 // console.log(d);
+
+// 12. Symbol在对象中的作用
+// （1）回顾有哪些数据类型 String,Number,Boolean,Array,Object
+// （2）symbol的声明并赋值输出
+let xxp = Symbol('熊小萍');
+console.log(xxp);  // 红色字体为Symbol类型
+console.log(xxp.toString());  // 蓝色字体为字符串类型
+
+// （3）如何用Symbol构建对象的Key，并调用和赋值
+let xxp1 = Symbol();
+let obj = {
+    [xxp1] : '小姑娘'
+}
+// 输出方式由.改为[]
+console.log(obj[xxp1]);
+// 可直接修改内容
+obj[xxp1] = '大哥哥'
+console.log(obj[xxp1]);
+
+// （4）Symbol对对象元素的保护作用
+// 没有保护的写法，可以获取对象中所有的值
+var obj2={name:'jspang',skill:'web',age:18};
+
+for (let item in obj2){
+    console.log(obj2[item]);
+}
+// 进行写保护，对于不想输出的元素进行保护
+let obj1={name:'jspang',skill:'web'};
+let age1=Symbol();
+obj[age1]=18;
+for (let item in obj1){
+    console.log(obj1[item]);
+} 
+console.log(obj1);
