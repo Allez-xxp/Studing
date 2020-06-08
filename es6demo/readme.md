@@ -183,3 +183,19 @@
     - Symbol的声明方式，赋值及调用（对象名[symbol变量]）
     - Symbol可构建对象的Key
     - Symbol对对象元素进行写保护（不想被获取的元素，别人不能获取）作用
+13. Set和WeakSet的数据结构
+    - Set(是一种数据结构；存储的是数组形式；作用是数组去重)
+        - Set的声明赋值 let setArr = new Set(['xxp','熊小萍']);
+        - 追加内容：add方法
+        - 删除指定内容（一个）：delete方法
+        - 删除全部内容：clear方法
+        - 查找方法：has方法(有则返回true，无则返回false)
+        - 遍历循环输出
+            - for..of方法
+            for(let item of setArr){
+                console.log(item)
+            }
+            - forEach()方法
+            setArr.forEach(value => console.log(value));
+        - 获取数组长度size属性（只用于数组）
+    - WeakSet声明（在new 的时候就放入值，将报错）；也不允许重复值

@@ -315,36 +315,66 @@
 // let d=Object.assign(a,b,c)
 // console.log(d);
 
-// 12. Symbol在对象中的作用
-// （1）回顾有哪些数据类型 String,Number,Boolean,Array,Object
-// （2）symbol的声明并赋值输出
-let xxp = Symbol('熊小萍');
-console.log(xxp);  // 红色字体为Symbol类型
-console.log(xxp.toString());  // 蓝色字体为字符串类型
+// // 12. Symbol在对象中的作用
+// // （1）回顾有哪些数据类型 String,Number,Boolean,Array,Object
+// // （2）symbol的声明并赋值输出
+// let xxp = Symbol('熊小萍');
+// console.log(xxp);  // 红色字体为Symbol类型
+// console.log(xxp.toString());  // 蓝色字体为字符串类型
 
-// （3）如何用Symbol构建对象的Key，并调用和赋值
-let xxp1 = Symbol();
-let obj = {
-    [xxp1] : '小姑娘'
+// // （3）如何用Symbol构建对象的Key，并调用和赋值
+// let xxp1 = Symbol();
+// let obj = {
+//     [xxp1] : '小姑娘'
+// }
+// // 输出方式由.改为[]
+// console.log(obj[xxp1]);
+// // 可直接修改内容
+// obj[xxp1] = '大哥哥'
+// console.log(obj[xxp1]);
+
+// // （4）Symbol对对象元素的保护作用
+// // 没有保护的写法，可以获取对象中所有的值
+// var obj2={name:'jspang',skill:'web',age:18};
+
+// for (let item in obj2){
+//     console.log(obj2[item]);
+// }
+// // 进行写保护，对于不想输出的元素进行保护
+// let obj1={name:'jspang',skill:'web'};
+// let age1=Symbol();
+// obj[age1]=18;
+// for (let item in obj1){
+//     console.log(obj1[item]);
+// } 
+// console.log(obj1);
+
+// 13. Set和weakset的数据结构
+// （1）什么是Set? 是一种数据结构；存储的是数组形式；作用是数组去重
+// (2)声明Set，赋值
+let setArr = new Set(['xxp','熊小萍']);
+// (3)追加内容：add方法；数组是push方法
+setArr.add('小姑娘');
+// (4)删除指定内容（一个）：delete方法
+// (5)删除全部内容：clear方法
+// setArr.delete('xxp');
+// setArr.clear();
+// (6)查找方法：has方法(有则返回true，无则返回false)
+console.log(setArr.has('xxp'));
+console.log(setArr);
+// (7)遍历循环输出 
+// ·for..of
+for(let item of setArr){
+    console.log(item)
 }
-// 输出方式由.改为[]
-console.log(obj[xxp1]);
-// 可直接修改内容
-obj[xxp1] = '大哥哥'
-console.log(obj[xxp1]);
+// ·forEach()
+setArr.forEach(value => console.log(value));
+// （8）获取数组长度size属性（只用于数组）
+console.log(setArr.size)
 
-// （4）Symbol对对象元素的保护作用
-// 没有保护的写法，可以获取对象中所有的值
-var obj2={name:'jspang',skill:'web',age:18};
+// （9）WeakSet声明（在new 的时候就放入值，将报错）；也不允许重复值
+let weakObj=new WeakSet();
+let obj={a:'jspang',b:'技术胖'}
+weakObj.add(obj);
 
-for (let item in obj2){
-    console.log(obj2[item]);
-}
-// 进行写保护，对于不想输出的元素进行保护
-let obj1={name:'jspang',skill:'web'};
-let age1=Symbol();
-obj[age1]=18;
-for (let item in obj1){
-    console.log(obj1[item]);
-} 
-console.log(obj1);
+console.log(weakObj);
