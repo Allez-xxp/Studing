@@ -352,29 +352,53 @@
 // 13. Set和weakset的数据结构
 // （1）什么是Set? 是一种数据结构；存储的是数组形式；作用是数组去重
 // (2)声明Set，赋值
-let setArr = new Set(['xxp','熊小萍']);
-// (3)追加内容：add方法；数组是push方法
-setArr.add('小姑娘');
-// (4)删除指定内容（一个）：delete方法
-// (5)删除全部内容：clear方法
-// setArr.delete('xxp');
-// setArr.clear();
-// (6)查找方法：has方法(有则返回true，无则返回false)
-console.log(setArr.has('xxp'));
-console.log(setArr);
-// (7)遍历循环输出 
-// ·for..of
-for(let item of setArr){
-    console.log(item)
+// let setArr = new Set(['xxp','熊小萍']);
+// // (3)追加内容：add方法；数组是push方法
+// setArr.add('小姑娘');
+// // (4)删除指定内容（一个）：delete方法
+// // (5)删除全部内容：clear方法
+// // setArr.delete('xxp');
+// // setArr.clear();
+// // (6)查找方法：has方法(有则返回true，无则返回false)
+// console.log(setArr.has('xxp'));
+// console.log(setArr);
+// // (7)遍历循环输出 
+// // ·for..of
+// for(let item of setArr){
+//     console.log(item)
+// }
+// // ·forEach()
+// setArr.forEach(value => console.log(value));
+// // （8）获取数组长度size属性（只用于数组）
+// console.log(setArr.size)
+
+// // （9）WeakSet声明（在new 的时候就放入值，将报错）；也不允许重复值
+// let weakObj=new WeakSet();
+// let obj={a:'jspang',b:'技术胖'}
+// weakObj.add(obj);
+
+// console.log(weakObj);
+
+// 14. map数据结构
+//（1）map声明：key可以设置成数组，值也可以设置成字符串
+let json = {
+    name:'jspang',
+    skill:'web'
 }
-// ·forEach()
-setArr.forEach(value => console.log(value));
-// （8）获取数组长度size属性（只用于数组）
-console.log(setArr.size)
+console.log(json.name);
 
-// （9）WeakSet声明（在new 的时候就放入值，将报错）；也不允许重复值
-let weakObj=new WeakSet();
-let obj={a:'jspang',b:'技术胖'}
-weakObj.add(obj);
-
-console.log(weakObj);
+var map=new Map();
+map.set(json,'iam');
+console.log(map);
+// map的增删查
+// 取值get
+console.log(map.get(json));
+// 删除delete的特定值
+map.delete(json);
+console.log(map)
+// size属性 
+console.log(map.size);
+// 查找是否存在has
+consolec .log(map.has('jspang'))
+// 清楚所有元素clear
+map.clear()

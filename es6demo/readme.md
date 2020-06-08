@@ -199,3 +199,13 @@
             setArr.forEach(value => console.log(value));
         - 获取数组长度size属性（只用于数组）
     - WeakSet声明（在new 的时候就放入值，将报错）；也不允许重复值
+14. map数据结构
+    - map声明：key可以设置成数组，值也可以设置成字符串
+    var map=new Map();
+    map.set(json,'iam');
+    - map的增删查
+        - 取值get  console.log(map.get(json));
+        - 删除delete的特定值 map.delete(json);
+        - size属性  console.log(map.size);
+        - 查找是否存在has  consolec .log(map.has('jspang'))
+        - 清除所有元素clear map.clear()
