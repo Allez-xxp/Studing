@@ -490,3 +490,65 @@
 //     console.log(val);
 //     return val;
 // });
+
+// 17. class类的使用
+// （1）声明class类
+// class Coder{
+//     // 类内为方法(函数)
+//     name(val){
+//         console.log(val);
+//     }
+// }
+// （2）类的实例化
+// class Coder{
+//     name(val){
+//         console.log(val);
+//     }
+// }
+
+// let xxp= new Coder;
+// jspang.name('xxp');
+// (3) 类的多方法声明
+// class Coder{
+//     name(val){
+//         console.log(val);
+//         return val;  // 调用name()方法，name方法中需要返回值
+//     }
+//     // 两个方法之间不需要逗号隔开
+//     skill(val){
+//         // this表示类本身Coder
+//         console.log(this.name('xxp')+':'+'Skill:'+val);
+//     }
+// }
+
+// let jspang= new Coder;
+// // jspang.name('xxp');
+// jspang.skill('web');
+
+// (4) 类的传参，constructor()方法: 传递参数后，直接使用this调用参数
+// class Coder{
+//     name(val){
+//         console.log(val);
+//         return val;
+//     }
+//     skill(val){
+//         console.log(this.name('xxp')+':'+'Skill:'+val);
+//     }
+
+//     constructor(a,b){
+//         this.a=a;
+//         this.b=b;
+//     }
+//     add(){
+//         return this.a+this.b;
+//     }
+// }
+// // let jspang=new Coder(1,2);
+// // console.log(xxp.add());
+// （5）类的继承 extends
+// class htmler extends Coder{
+
+// }
+
+// let pang=new htmler;
+// pang.name('熊小萍');

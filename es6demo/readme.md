@@ -231,3 +231,16 @@
     - 先定义每个步骤的方法，再声明promise，按照顺序调用方法
     - promise的基本形式：
     new Promise(step1).then(函数).then(函数).then(函数)
+17. class类
+    - 声明class类
+    class COder {
+        <!-- 类内为方法（函数） -->
+    }
+    - 调用类中某一方法时，该方法应有返回值
+    - 两个方法之间不需要逗号隔开
+    - 在某一方法中使用this时，this表示类本身
+    - constructor()方法: 传递参数后，直接使用this调用参数
+    - 类的继承 extends
+    class htmler extends Coder{
+        
+    }
