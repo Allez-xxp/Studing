@@ -209,3 +209,20 @@
         - size属性  console.log(map.size);
         - 查找是否存在has  consolec .log(map.has('jspang'))
         - 清除所有元素clear map.clear()
+15. proxy进行预处理操作
+    - 声明proxy
+        - 基本形式：let pro = new Proxy({},{})
+        - 解释：第一个花括号就相当于我们方法的主体，后边的花括号就是Proxy代理处理区域，相当于我们写钩子函数的地方。
+    - get属性 get:function(target,key,property){}
+        - 定义：是在得到某对象属性值时预处理的方法，接受三个参数
+            - target：得到的目标值
+            - key：目标的key值，相当于对象的属性
+            - property：这个不太常用
+    - set属性 set:function(target,key,value,receiver){}
+        - 定义：是当要改变Proxy属性值时，进行的预先处理，接收四个参数
+            - target:目标值
+            - key：目标的Key值
+            - value：要改变的值
+            - receiver：改变前的原始值
+    - apply方法
+        - 作用是调用内部的方法，它使用在方法体是一个匿名函数时

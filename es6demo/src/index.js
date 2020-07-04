@@ -381,24 +381,71 @@
 
 // 14. map数据结构
 //（1）map声明：key可以设置成数组，值也可以设置成字符串
-let json = {
-    name:'jspang',
-    skill:'web'
-}
-console.log(json.name);
+// let json = {
+//     name:'jspang',
+//     skill:'web'
+// }
+// console.log(json.name);
 
-var map=new Map();
-map.set(json,'iam');
-console.log(map);
-// map的增删查
-// 取值get
-console.log(map.get(json));
-// 删除delete的特定值
-map.delete(json);
-console.log(map)
-// size属性 
-console.log(map.size);
-// 查找是否存在has
-consolec .log(map.has('jspang'))
-// 清楚所有元素clear
-map.clear()
+// var map=new Map();
+// map.set(json,'iam');
+// console.log(map);
+// // map的增删查
+// // 取值get
+// console.log(map.get(json));
+// // 删除delete的特定值
+// map.delete(json);
+// console.log(map)
+// // size属性 
+// console.log(map.size);
+// // 查找是否存在has
+// console .log(map.has('jspang'))
+// // 清楚所有元素clear
+// map.clear()
+
+// 15. proxy：进行预处理操作；函数和对象的生命周期
+// （1）回顾定义对象方法
+// let obj = {
+//     add:function(val) {
+//         return val + 100;
+//     },
+//     name:'I am xxp'
+// }
+// console.log(obj.add(100));
+// console.log(obj.name);
+
+// (2) 声明proxy
+// let pro = new Proxy({
+//     // 对象体
+//     add:function(val) {
+//         return val + 100;
+//     },
+//     name:'I am xxp'
+
+// },{
+//     // 预处理机制（get，set，apply）
+//     // get属性是在你得到某对象属性值时预处理的方法
+//     get:function(target,key,property) {
+//         return target[key];
+//     },
+//     // set属性是值你要改变Proxy属性值时，进行的预先处理
+//     set:function(target,key,value,receiver){
+//         console.log(`setting ${key} = ${value}`);
+//         return target[key] = value;
+//     },
+    
+// }) 
+// (3) apply的作用是调用内部的方法，它使用在方法体是一个匿名函数时
+    let target = function () {
+        return 'I am JSPang';
+    };
+    let handler = {
+        apply(target, ctx, args) {
+            console.log('do apply');
+            return Reflect.apply(...arguments);
+        }
+    }
+    
+    let pro = new Proxy(target, handler);
+    
+    console.log(pro());
