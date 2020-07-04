@@ -552,3 +552,8 @@
 
 // let pang=new htmler;
 // pang.name('熊小萍');
+
+// 18. 模块化操作
+// 引入模块 import
+// import {name} from './temp'
+// console.log(name);  // 使用babel进行转换

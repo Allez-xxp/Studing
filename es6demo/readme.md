@@ -242,5 +242,17 @@
     - constructor()方法: 传递参数后，直接使用this调用参数
     - 类的继承 extends
     class htmler extends Coder{
-        
+
     }
+18. 模块化操作
+    - export :负责进行模块化，也是模块的输出。
+    - import : 负责把模块引入，也是模块的引入操作。
+    - 需要使用babel进行转换
+    - export：可以让我们把变量，函数，对象进行模块话，提供外部调用接口，让外部进行引用。
+        - 简单模块的引入，输出
+        - 多变量的输出
+        - 函数的模块化输出
+        - 变量名语义化：as
+    - export与export default的区别 
+        - 引入方法不同：export的需要加{}，export default则不需要
+        - 一个文件中export default只有一个
