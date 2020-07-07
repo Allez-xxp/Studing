@@ -47,3 +47,12 @@
     Demo:db.user.remove({“name”:”jspang”})
     - db.集合.drop( ): 删除整个集合，这个在实际工作中一定要谨慎使用，如果是程序，一定要二次确认。
     - db.dropDatabase( ): 删除整个数据库，在删除库时，一定要先进入数据库，然后再删除。实际工作中这个基本不用，实际工作可定需要保留数据和痕迹的
+4. 用js来写shell命令
+    - 首先新建一个js文件
+    - 编写代码，定义用户名，登录时间；将其格式转变为json格式
+    var userName = "xxp";    //声明一个登录名             
+    var timeStamp = Date.parse(new Date());     //声明登录时的时间戳  
+    var jsonDatabase = {"loginUnser":userName,"loginTime":timeStamp}; 
+    - 连接connect数据库，插入insert数据
+    var db = connect('log');   //链接数据库
+    db.login.insert(jsonDatabase);  //插入数据
