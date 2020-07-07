@@ -11,4 +11,26 @@
     - 命令
         - show dbs 查看所有数据库
         - db.version() 查看数据库版本
-
+2. MongoDB基础命令-1
+    注：MongoDB的操作命令为JavaScript命令
+    - 常量赋值与输出命令(print())
+    var x = 'hello'
+    print(x)
+    - 定义函数
+    function xxp(){
+        return 'allez';
+    }
+    - 重点：存储结构
+        - 关系型数据库
+            - 数据库(database)
+            - 数据表(table)
+            - 数据行
+        - MongoDB
+            - 数据库（db）
+            - 集合(collection)
+            - 文件
+    - 基础shell命令
+        - show dbs 显示已有数据库，如果你刚安装好，会默认有local、admin(config)，这是MongoDB的默认数据库，我们在新建库时是不允许起这些名称的
+        - use admin 进入该数据库，也可以理解成为使用数据库。成功会显示：switched to db admin
+        - show collections 显示数据库中的集合（关系型中叫表）
+        - db 显示当前位置，也就是你当前使用的数据库名称，这个命令算是最常用的，因为你在作任何操作的时候都要先查看一下自己所在的库，以免造成操作错误
