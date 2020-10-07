@@ -55,3 +55,18 @@
     - 注意：
         -命名使用className属性，小驼峰式
         - 引用的自定义组件需大写
+
+9. 实例学习
+    - Fragment标签：适用于以flex布局的组件开发；不使用最外层盒子div包裹的组件
+    - 响应式设计原理和数据绑定方法 
+        - React是单向数据流，需要设置数据绑定和响应事件
+        - setState用于改变数据
+        - bind用于改变this的指向 onChange={this.inputChange.bind(this)}
+    - 添加事件 onClick={this.addList.bind(this)}
+        - 使用map，遍历数组输出；使用箭头函数
+        - key值命名：index+item
+        - 使用扩展运算符...，把原数组进行了分解，然后添加新数据再进行组合，形成了新的数组
+    - 删除事件 onClick={this.deleteItem.bind(this,index)}
+        - 先声明一个局部变量,然后利用传递过来的下标index,删除数组中的值
+        - 删除后用setState更新数据
+        
