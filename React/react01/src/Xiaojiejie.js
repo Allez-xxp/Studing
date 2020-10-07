@@ -1,4 +1,5 @@
 import React,{Component, Fragment} from 'react'
+import XiaojiejieItem from './XiaojiejieItem'
 
 // 定义一个类，面向对象编程
 class Xiaojiejie extends Component{
@@ -28,11 +29,21 @@ class Xiaojiejie extends Component{
                         // 使用map进行循环
                         this.state.list.map((item,index)=>{
                             return (
-                                <li key={index+item} 
-                                onClick={this.deleteItem.bind(this,index)}>
-                                {item}
-                                </li>
+                                // 
+                                // <li key={index+item} 
+                                // onClick={this.deleteItem.bind(this,index)}>
+                                // {item}
+                                // </li>
+                                // 
+                                <XiaojiejieItem 
+                                key={item+index}
+                                content={item}
+                                index={index}
+                                deleteItem={this.deleteItem.bind(this)}
+                                />
+                                
                             )
+                            
                         })
                     }
                 </ul>

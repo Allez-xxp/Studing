@@ -69,4 +69,23 @@
     - 删除事件 onClick={this.deleteItem.bind(this,index)}
         - 先声明一个局部变量,然后利用传递过来的下标index,删除数组中的值
         - 删除后用setState更新数据
+
+10. JSX陷阱·注意
+    - 注释的格式 {/**/} 快捷键Ctrl+/
+    - 命名className
+    - html的解析问题
+    如在文本框中输入HTML标签无法解析,则使用dangerouslySetInnerHTML属性
+    dangerouslySetInnerHTML={{__html:item}}
+    - label标签 需要使用htmlFor与id绑定
+    <label htmlFor="jspang">加入服务：</label>
+11. 添加插件，快速编码
+    - Simple React Snippets
+12. 组件拆分
+    - 将一个js文件中的内容分成各个组件去完成。例如将列表区抽离，做成组件形式引入，删除之前的列表区
+    import XiaojiejieItem from './XiaojiejieItem'
+    <div>
+        <XiaojiejieItem />
+    </div>
+13. 
+    
         
