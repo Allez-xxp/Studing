@@ -47,3 +47,11 @@
         - app.js : 这个文件相当于一个方法模块，也是一个简单的模块化编程。
         - serviceWorker.js: 这个是用于写移动端开发的，PWA必须用到这个文件，有了这个文件，就相当于有了离线浏览的功能。
 
+7. React的简单运用和组件
+    - index.js 入口文件
+    - App.js 编写App组件
+8. JSX的语法
+    - 定义：javascript和XML的结合， React发明了JSX，可以方便的利用HTML语法来创建虚拟DOM， 当遇到<，JSX就当作HTML解析，遇到{，就当JavaScript解析.
+    - 注意：
+        -命名使用className属性，小驼峰式
+        - 引用的自定义组件需大写
