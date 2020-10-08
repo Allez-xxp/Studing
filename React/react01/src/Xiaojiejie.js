@@ -1,6 +1,6 @@
 import React,{Component, Fragment} from 'react'
 import XiaojiejieItem from './XiaojiejieItem'
-
+import axios from 'axios'
 // 定义一个类，面向对象编程
 class Xiaojiejie extends Component{
     // 构造函数constructor; 通过props与父类进行数据通信
@@ -8,10 +8,20 @@ class Xiaojiejie extends Component{
         super(props)  // 调用父类构造函数（固定写法）
         this.state = {
             inputValue: '',  // input中的值
-            list: ['小气泡', '水氧护肤']       // 服务列表
+            list: []       // 服务列表
         }
     }
+    axios.post('https://web-api.juejin.im/v3/web/wbbr/bgeda')
+        .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
+        .catch((error)=>{console.log('axios 获取数据失败'+error)})
+    }
+    // axios.get('https://easy-mock.com/mock/5f7ec00d46477f19b2848af2/xiaojiejie/xiaojiejie')
+    //     .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
+    //     .catch((error)=>{console.log('axios 获取数据失败'+error)})
+    // }
+
     render() {
+        
         return (
             // 通常情况下，组件开发时，最外层需要用盒子包裹（（组件外层包裹原则），不然会报错
             // 出现flex布局时，最外层盒子无用 或不需要使用最外层盒子，怎么办？？

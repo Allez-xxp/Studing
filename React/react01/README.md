@@ -96,7 +96,7 @@
     - React是单向数据流，由父组件传递的数据为只读数据，所以子组件需要通过调用父组件的方法对其进行修改删除
     - React其实可以模块化和组件化开发。看/public/index.html文件
     - 函数式编程让我们的代码更清晰，每个功能都是一个函数。为我们的代码测试代理了极大的方便，更容易实现前端自动化测试。
-    
+
 15. 调试工具React developer tools
     - 在Chrome中进行，添加扩展程序，进入应用商店，搜索react（第一个）
     - 三种状态（图标颜色三种）：
@@ -122,5 +122,43 @@
     - 用ref绑定取得要服务的数量，绑定ref
     - 通过querySelectorAll('').length 获取元素长度;但会出现错误（会提前渲染，因为setState是异步函数，虚拟dom渲染需要时间，所以在方法中使用回调函数进行console.log的输出）
 
+18. React的生命周期（生命周期函数指在某一个时刻组件会自动调用执行的函数）
+    - 三个阶段
+        - Mounting: 挂载阶段。
+        - Updation: 更新阶段。
+        - Unmounting: 销毁阶段
+    - 在创建组件实例并将其插入DOM时（挂载阶段），将按以下顺序调用这些方法：
+        - constructor() 构造函数在挂载之前被调用，定义实例属性props,状态state
+        - static getDerivedStateFromProps()
+        - render() 页面state或props发生变化时执行。
+            - 类组件中唯一需要的方法，纯函数，不会修改组件的状态，每次调用时都返回相同的结果，并且不与浏览器直接交互。
+        - componentDidMount() 组件挂载完成时被执行。设置订阅
+    - 更新可能是由于道具或状态的更改引起的。重新渲染组件时（更新阶段），将按以下顺序调用这些方法：
+        - static getDerivedStateFromProps() 在初始安装和后续更新上都在调用render方法之前立即调用
+        - shouldComponentUpdate() 会在组件更新之前，自动被执行。（默认行为）
+        - render()  
+        - getSnapshotBeforeUpdate() 在最近渲染的输出提交到DOM之前，立即调用。
+        - componentDidUpdate() 在组件更新之后执行，它是组件更新的最后一个环节。
+    - 从DOM中删除组件时（卸载阶段），将调用此方法：
+        - componentWillUnmount() 在卸载和销毁组件之前立即调用。 取消订阅、定时器
+    - 注意： 
+        - 如果shouldComponentUpdate()返回false，render()将不会被调用
+        - 如果shouldComponentUpdate()返回，      falsecomponentDidUpdate()将不会被调用。
+19. 组件的性能优化
+    - 问题：子组件XiaojiejieItem频繁无用渲染render。
+    - 解决方法：shouldComponentUpdate函数
+        - shouldComponentUpdate有两个参数：
+            - nextProps:变化后的属性;
+            - nextState:变化后的状态;
+20. react进行axios请求远程数据
+    - 安装axios npm install -save axios
+    - 引入axios import axios from 'axios'
+    - 在componentDidMount生命周期函数里请求ajax
+    componentDidMount(){
+    axios.post('https://web-api.juejin.im/v3/web/wbbr/bgeda')
+        .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
+        .catch((error)=>{console.log('axios 获取数据失败'+error)})
+    }
+    - 使用easy-mock模拟数据
 
         

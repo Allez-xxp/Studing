@@ -7,7 +7,16 @@ class XiaojiejieItem extends Component {
         super(props)  //子组件向父组件通信
         this.handleClick = this.handleClick.bind(this)
     }
+    // 组件优化
+    shouldComponentUpdate(nextProps,nextState) {
+        if(nextProps.content !== this.props.content) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     render() { 
+        console.log('child-render')
         return ( 
             <li onClick={this.handleClick}>
                 {this.props.avname}美容-{this.props.content}
