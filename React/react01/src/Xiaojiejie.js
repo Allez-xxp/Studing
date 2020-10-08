@@ -19,12 +19,15 @@ class Xiaojiejie extends Component{
             <Fragment>
                 <div>
                     {/* 添加响应事件onChange绑定对应方法inputChange；通过bind修改this的指向 */}
-                    <input value= {this.state.inputValue} 
-                    onChange={this.inputChange.bind(this)} />
+                    <input 
+                        ref={(input) => (this.input=input)}
+                        value= {this.state.inputValue} 
+                        onChange={this.inputChange.bind(this)} 
+                    />
                     <button onClick={this.addList.bind(this)}>添加服务</button>
                 </div>
                 {/* 列表 动态获取列表内容 添加删除事件 */}
-                <ul>
+                <ul ref={(ul)=>{this.ul=ul}}>
                     {
                         // 使用map进行循环
                         this.state.list.map((item,index)=>{
@@ -34,11 +37,12 @@ class Xiaojiejie extends Component{
                                 // onClick={this.deleteItem.bind(this,index)}>
                                 // {item}
                                 // </li>
-                                // 
+                                // 设置必创值 avname属性
                                 <XiaojiejieItem 
                                 key={item+index}
                                 content={item}
                                 index={index}
+                                // avname='小姐姐'
                                 deleteItem={this.deleteItem.bind(this)}
                                 />
                                 
@@ -51,19 +55,22 @@ class Xiaojiejie extends Component{
         )
     }
     // inputChange方法
-    inputChange(e) {
+    inputChange() {
         // console.log(e)
         // 在React中，使用setState修改值
         this.setState({
-            inputValue: e.target.value
+            inputValue: this.input.value
         })
     }
     // 添加事件
     addList() {
-        this.setState({
+        this.setState({   //setState方法是异步函数的（虚拟dom渲染需要时间），所以我们需要添加一个回调函数将console.log放进去
             // 使用扩展运算符，把list数组进行了分解，然后添加新数据再进行组合，形成了新的数组，
             list:[...this.state.list,this.state.inputValue],
             inputValue:''
+        }, () => {
+            // 获取该HTML标签下的某一标签的长度 querySelectorAll('').length
+            console.log(this.ul.querySelectorAll('li').length) 
         }) 
     }
     // 删除事件(列表项)

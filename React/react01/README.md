@@ -86,6 +86,41 @@
     <div>
         <XiaojiejieItem />
     </div>
-13. 
+13. 父子组件的传值
+    - 父组件向子组件传值通过组件属性的形式
+    在父组件页面中，子组件绑定content属性，值传递给item <XiaojiejieItem content={item} />
+    在子组件页面中，设置this.props.xxx的形式接收
+    - 子组件调用父组件方法（修改，删除数据）
+        **-** React规定子组件不能修改和删除父组件的数据（React是单向数据流，由父组件传递的数据为只读数据，所以子组件需要通过调用父组件的方法对其进行修改删除）
+14. React单向数据流、React同其他框架共同工作和函数式编程
+    - React是单向数据流，由父组件传递的数据为只读数据，所以子组件需要通过调用父组件的方法对其进行修改删除
+    - React其实可以模块化和组件化开发。看/public/index.html文件
+    - 函数式编程让我们的代码更清晰，每个功能都是一个函数。为我们的代码测试代理了极大的方便，更容易实现前端自动化测试。
     
+15. 调试工具React developer tools
+    - 在Chrome中进行，添加扩展程序，进入应用商店，搜索react（第一个）
+    - 三种状态（图标颜色三种）：
+        - 灰色： 这种就是不可以使用，说明页面不是又React编写的。
+        - 黑色: 说明页面是用React编写的，并且处于生成环境当中。
+        - 红色： 说明页面是用React编写的，并且处于调试环境当中。
+16. 校验传递值（父组件向子组件传值）propTypes
+    - 先引入propTypes import propTypes from 'prop-types'
+    - 校验是校验值的类型
+    XiaojiejieItem.propTypes = {
+    avname:PropTypes.string.isRequired,  // 必须传递，不传递就报错
+    content:propTypes.string,
+    index:propTypes.number,
+    deleteItem:propTypes.func
+    }   
+    - 若需要传递必须值，使用avname属性，进行数据绑定传递（父->子[props]接收）
+    - 也可以使用默认值defaultProps
+    XiaojiejieItem.defaultProps = {
+        avname:'松岛枫'
+    }
+17. ref的用法
+    - 进行数据绑定，使用ES6的箭头函数 ref={(input) => (this.input=input)}
+    - 用ref绑定取得要服务的数量，绑定ref
+    - 通过querySelectorAll('').length 获取元素长度;但会出现错误（会提前渲染，因为setState是异步函数，虚拟dom渲染需要时间，所以在方法中使用回调函数进行console.log的输出）
+
+
         
