@@ -1,6 +1,6 @@
 import React,{Component, Fragment} from 'react'
 import XiaojiejieItem from './XiaojiejieItem'
-import axios from 'axios'
+// import axios from 'axios'
 // 定义一个类，面向对象编程
 class Xiaojiejie extends Component{
     // 构造函数constructor; 通过props与父类进行数据通信
@@ -11,10 +11,10 @@ class Xiaojiejie extends Component{
             list: []       // 服务列表
         }
     }
-    axios.post('https://web-api.juejin.im/v3/web/wbbr/bgeda')
-        .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
-        .catch((error)=>{console.log('axios 获取数据失败'+error)})
-    }
+    // axios.post('https://web-api.juejin.im/v3/web/wbbr/bgeda')
+    //     .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
+    //     .catch((error)=>{console.log('axios 获取数据失败'+error)})
+    // }
     // axios.get('https://easy-mock.com/mock/5f7ec00d46477f19b2848af2/xiaojiejie/xiaojiejie')
     //     .then((res)=>{console.log('axios 获取数据成功:'+JSON.stringify(res))  })
     //     .catch((error)=>{console.log('axios 获取数据失败'+error)})
