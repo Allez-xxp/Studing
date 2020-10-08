@@ -1,6 +1,10 @@
 import React,{Component, Fragment} from 'react'
 import XiaojiejieItem from './XiaojiejieItem'
+import {CSSTransition , TransitionGroup} from 'react-transition-group'
 // import axios from 'axios'
+import  './style.css'
+import Boss from './Boss'
+
 // 定义一个类，面向对象编程
 class Xiaojiejie extends Component{
     // 构造函数constructor; 通过props与父类进行数据通信
@@ -8,7 +12,7 @@ class Xiaojiejie extends Component{
         super(props)  // 调用父类构造函数（固定写法）
         this.state = {
             inputValue: '',  // input中的值
-            list: []       // 服务列表
+            list: ['小气泡', '韩式护肤', '水氧']       // 服务列表
         }
     }
     // axios.post('https://web-api.juejin.im/v3/web/wbbr/bgeda')
@@ -21,7 +25,6 @@ class Xiaojiejie extends Component{
     // }
 
     render() {
-        
         return (
             // 通常情况下，组件开发时，最外层需要用盒子包裹（（组件外层包裹原则），不然会报错
             // 出现flex布局时，最外层盒子无用 或不需要使用最外层盒子，怎么办？？
@@ -29,7 +32,7 @@ class Xiaojiejie extends Component{
             <Fragment>
                 <div>
                     {/* 添加响应事件onChange绑定对应方法inputChange；通过bind修改this的指向 */}
-                    <input 
+                    <input className='input'
                         ref={(input) => (this.input=input)}
                         value= {this.state.inputValue} 
                         onChange={this.inputChange.bind(this)} 
@@ -38,8 +41,9 @@ class Xiaojiejie extends Component{
                 </div>
                 {/* 列表 动态获取列表内容 添加删除事件 */}
                 <ul ref={(ul)=>{this.ul=ul}}>
+                    <TransitionGroup>
                     {
-                        // 使用map进行循环
+                        // 使用map进行循环遍历
                         this.state.list.map((item,index)=>{
                             return (
                                 // 
@@ -47,7 +51,15 @@ class Xiaojiejie extends Component{
                                 // onClick={this.deleteItem.bind(this,index)}>
                                 // {item}
                                 // </li>
-                                // 设置必创值 avname属性
+                                // 设置必需值 avname属性
+                            <CSSTransition
+                                timeout={1000}
+                                classNames='boss-text'
+                                unmountOnExit
+                                appear={true}
+                                key={index+item}  
+                            >
+
                                 <XiaojiejieItem 
                                 key={item+index}
                                 content={item}
@@ -55,12 +67,14 @@ class Xiaojiejie extends Component{
                                 // avname='小姐姐'
                                 deleteItem={this.deleteItem.bind(this)}
                                 />
-                                
+                            </CSSTransition>    
                             )
                             
                         })
                     }
+                    </TransitionGroup>
                 </ul>
+            <Boss/>
             </Fragment>
         )
     }

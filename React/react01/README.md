@@ -160,5 +160,26 @@
         .catch((error)=>{console.log('axios 获取数据失败'+error)})
     }
     - 使用easy-mock模拟数据
+21. css3动画效果
+    - 第一个css设置 
+        - opacity 透明度  
+        - transition过渡属性包含四个参数：1.css属性的名称 2.完成时间 3.过渡效果：ease-in慢开始 4.何时开始 
+    - 第二次设置css 关键帧@keyframe用法 动画animation 
+    - 第三次设置css react-transition-group动画组件
+        - 安装eact-transition-group动画组件 npm install react-transition-group --save
+        - 三个核心库： 
+            - Transition
+            - CSSTransition
+            - TransitionGroup
+        - 类名：
+            - xxx-enter: 进入（入场）前的CSS样式；
+            - xxx-enter-active:进入动画直到完成时之前的CSS样式;
+            - xxx-enter-done:进入完成时的CSS样式;
+            - xxx-exit:退出（出场）前的CSS样式;
+            - xxx-exit-active:退出动画知道完成时之前的的CSS样式。
+            - xxx-exit-done:退出完成时的CSS样式。
+        - unmountOnExit属性 元素退场时，自动把DOM也删除。
+        
+
 
         
