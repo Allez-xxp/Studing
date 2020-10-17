@@ -1,4 +1,4 @@
-# React知识系列学习
+# React知识系列
 1. React简介
     - 最新的前端框架，用于构建用户界面的JavaScript库（官网https://reactjs.org）。
     - ReactJS是由Facebook在2013年5月推出的一款JS前端开源框架,推出式主打特点式函数式编程风格。值得一说的是，到目前为止ReactJS是世界上使用人数最多的前端框架,它拥有全球最健全的文档和社区体系。
